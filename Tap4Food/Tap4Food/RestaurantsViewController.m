@@ -7,32 +7,43 @@
 //
 
 #import "RestaurantsViewController.h"
+#import "OAuthConsumer.h"
 
 @interface RestaurantsViewController ()
+@property (nonatomic, strong)NSData *yelpResults;
 
 @end
 
 @implementation RestaurantsViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(NSData *)yelpResults {
+    if (!_yelpResults) {
+        _yelpResults = [[NSData alloc]init];
     }
-    return self;
+    return _yelpResults;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupRestaurants];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setupRestaurants {
+    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:@"http://api.yelp.com/v2/search?term=food&amp;location=San+Francisco"]];
+    NSError *requestError;
+    NSURLResponse *urlResponse = nil;
+    
+    self.yelpResults = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    NSDictionary *properties = [NSJSONSerialization JSONObjectWithData:self.yelpResults options:0 error:NULL];
+    NSLog(@"%@ is the stuff", );
 }
 
 /*

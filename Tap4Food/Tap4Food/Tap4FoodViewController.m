@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self setup];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,4 +27,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)generateRandomRestaurants:(id)sender {
+    NSLog(@"This button was pressed");
+}
+
+-(void)setup {
+    //Set the color of the navigation bar
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 @end
