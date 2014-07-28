@@ -10,7 +10,7 @@
 #import "OAuthConsumer.h"
 
 @interface RestaurantsViewController ()
-@property (nonatomic, strong)NSData *yelpResults;
+@property (nonatomic, strong)NSMutableData *yelpResults;
 
 @end
 
@@ -18,7 +18,7 @@
 
 -(NSData *)yelpResults {
     if (!_yelpResults) {
-        _yelpResults = [[NSData alloc]init];
+        _yelpResults = [[NSMutableData alloc]init];
     }
     return _yelpResults;
 }
@@ -37,13 +37,25 @@
 }
 
 -(void)setupRestaurants {
-    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:@"http://api.yelp.com/v2/search?term=food&amp;location=San+Francisco"]];
-    NSError *requestError;
-    NSURLResponse *urlResponse = nil;
+    //Use Oauth to authorize the user/the app to use Yelp's API
     
-    self.yelpResults = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
-    NSDictionary *properties = [NSJSONSerialization JSONObjectWithData:self.yelpResults options:0 error:NULL];
-    NSLog(@"%@ is the stuff", );
+    OAConsumer *consumer = [[OAConsumer alloc]initWithKey:@"D2WSy72QA5ilrtzEq7U-kg" secret:@"7WzTKp11knWN3dFT4MkjPjuiCk4"];
+    OAToken *token = [[OAToken alloc]initWithKey:@"x-qRDH6wasCJ5lfpp0QMw1n_ZEQpAyUw" secret:@"6nlB_E-kg0dDNr5t1wn3iSu5WIw"];
+    
+    NSURL *URL = [NSURL URLWithString:@"http://api.yelp.com/v2/search?term=restaurants&location=new%20york"];
+    
+    OAMutableURLRequest *request = [[OAMutableURLRequest alloc]initWithURL:URL
+                                                                  consumer:consumer
+                                                                     token:token
+                                                                     realm:nil
+                                                         signatureProvider:nil];
+    
+    [request setHTTPMethod:@"GET"];
+    
+    self.yelpResults = [NSMutableData dataWithContentsOfURL:URL];
+    NSLog(@"%@ haha", self.yelpResults);
+    
+    
 }
 
 /*
