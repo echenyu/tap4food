@@ -29,6 +29,8 @@
 		071A2DB21986E4A900B00665 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 071A2D9E1986E4A900B00665 /* README */; };
 		071A2DB41986E4BC00B00665 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071A2DB31986E4BC00B00665 /* Security.framework */; };
 		071A2DB61986E4D200B00665 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 071A2DB51986E4D200B00665 /* libxml2.dylib */; };
+		072421291986FCAF00F6689D /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421281986FCAF00F6689D /* YAJLiOS.framework */; };
+		0724212B1986FD0900F6689D /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0724212A1986FD0900F6689D /* GHUnitIOS.framework */; };
 		07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */; };
 		07FEA1691986C01C001234A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA1681986C01C001234A0 /* Foundation.framework */; };
 		07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16A1986C01C001234A0 /* CoreGraphics.framework */; };
@@ -99,6 +101,8 @@
 		071A2D9E1986E4A900B00665 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		071A2DB31986E4BC00B00665 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		071A2DB51986E4D200B00665 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		072421281986FCAF00F6689D /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = ../../../../../Downloads/YAJLiOS.framework; sourceTree = "<group>"; };
+		0724212A1986FD0900F6689D /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../../../Downloads/GHUnitIOS.framework; sourceTree = "<group>"; };
 		07650EBA1986CCCC002F1E5E /* RestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsViewController.h; sourceTree = "<group>"; };
 		07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsViewController.m; sourceTree = "<group>"; };
 		07FEA1651986C01C001234A0 /* Tap4Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tap4Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,8 +131,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072421291986FCAF00F6689D /* YAJLiOS.framework in Frameworks */,
 				071A2DB61986E4D200B00665 /* libxml2.dylib in Frameworks */,
 				071A2DB41986E4BC00B00665 /* Security.framework in Frameworks */,
+				0724212B1986FD0900F6689D /* GHUnitIOS.framework in Frameworks */,
 				07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */,
 				07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */,
 				07FEA1691986C01C001234A0 /* Foundation.framework in Frameworks */,
@@ -234,6 +240,8 @@
 		07FEA1671986C01C001234A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0724212A1986FD0900F6689D /* GHUnitIOS.framework */,
+				072421281986FCAF00F6689D /* YAJLiOS.framework */,
 				071A2DB51986E4D200B00665 /* libxml2.dylib */,
 				071A2DB31986E4BC00B00665 /* Security.framework */,
 				07FEA1681986C01C001234A0 /* Foundation.framework */,
@@ -536,6 +544,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
+					"$(SDKROOT)/../../../../../../../../../Users/Eric/Documents/Developer/Objective",
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks/YAJL.framework/Headers",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks/GHUnit.framework",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
+					/Users/Eric/Downloads,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tap4Food/Tap4Food-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -560,6 +582,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
+					"$(SDKROOT)/../../../../../../../../../Users/Eric/Documents/Developer/Objective",
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks/YAJL.framework/Headers",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks/GHUnit.framework",
+					/Users/Eric/Documents/Developer/Objective,
+					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
+					/Users/Eric/Downloads,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tap4Food/Tap4Food-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
