@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *restaurantName;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantPicture;
 @property (weak, nonatomic) IBOutlet UITextField *restaurantAddress;
+@property (weak, nonatomic) IBOutlet UIImageView *restaurantRating;
+
 
 @property (nonatomic, strong)UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong)UIImage *restaurantImage;
@@ -63,6 +65,7 @@
     [super viewDidLoad];
     //Make sure the user can't change the phone number
     self.phoneNumber.enabled = NO;
+    self.restaurantAddress.enabled = NO;
     [self.restaurantName adjustsFontSizeToFitWidth];
     [self.currentLocationManager startUpdatingLocation];
     [self setupRestaurants];
@@ -131,11 +134,13 @@
     NSDictionary *pickedRestaurant = [restaurantsFromYelp objectAtIndex:randomRestaurantNumber];
     NSURL *imageUrl;
     NSData *imageData;
+    
     if([pickedRestaurant objectForKey:@"image_url"] == nil) {
         imageUrl = [[NSURL alloc]init];
     } else {
         imageUrl = [[NSURL alloc]initWithString:[pickedRestaurant objectForKey:@"image_url"]];
     }
+    
     if(imageUrl == nil) {
         imageData = [[NSData alloc]init];
     } else {
@@ -157,6 +162,21 @@
         addressString = [addressString stringByAppendingString:@", "];
     }
     self.restaurantAddress.text = addressString;
+    
+    NSURL *ratingImgURL;
+    NSData *ratingImgData;
+    if([pickedRestaurant objectForKey:@"rating_img_url"] == nil) {
+        ratingImgURL = [[NSURL alloc]init];
+    } else {
+        ratingImgURL = [[NSURL alloc]initWithString:[pickedRestaurant objectForKey:@"rating_img_url"]];
+    }
+    
+    if(ratingImgURL == nil) {
+        ratingImgData = [[NSData alloc]init];
+    } else {
+        ratingImgData = [[NSData alloc]initWithContentsOfURL:ratingImgURL];
+        self.restaurantRating.image = [UIImage imageWithData:ratingImgData];
+    }
     
 
 }
