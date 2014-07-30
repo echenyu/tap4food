@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		071A2DB41986E4BC00B00665 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071A2DB31986E4BC00B00665 /* Security.framework */; };
 		071A2DB61986E4D200B00665 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 071A2DB51986E4D200B00665 /* libxml2.dylib */; };
-		072421291986FCAF00F6689D /* YAJLiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421281986FCAF00F6689D /* YAJLiOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		0724212B1986FD0900F6689D /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0724212A1986FD0900F6689D /* GHUnitIOS.framework */; };
 		07242192198882FA00F6689D /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0724216E198882FA00F6689D /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07242193198882FA00F6689D /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 07242170198882FA00F6689D /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -33,8 +32,9 @@
 		072421A8198889A000F6689D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A7198889A000F6689D /* SystemConfiguration.framework */; };
 		072421AA198889A900F6689D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A9198889A900F6689D /* MediaPlayer.framework */; };
 		072421AD1988B80700F6689D /* Tap4FoodGenerateRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */; };
+		072AB9BC1989405200D6F706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA1681986C01C001234A0 /* Foundation.framework */; };
+		072AB9BE1989457900D6F706 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072AB9BD1989457900D6F706 /* CoreLocation.framework */; };
 		07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */; };
-		07FEA1691986C01C001234A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA1681986C01C001234A0 /* Foundation.framework */; };
 		07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16A1986C01C001234A0 /* CoreGraphics.framework */; };
 		07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16C1986C01C001234A0 /* UIKit.framework */; };
 		07FEA1731986C01C001234A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07FEA1711986C01C001234A0 /* InfoPlist.strings */; };
@@ -63,7 +63,6 @@
 /* Begin PBXFileReference section */
 		071A2DB31986E4BC00B00665 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		071A2DB51986E4D200B00665 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		072421281986FCAF00F6689D /* YAJLiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJLiOS.framework; path = ../../../../../Downloads/YAJLiOS.framework; sourceTree = "<group>"; };
 		0724212A1986FD0900F6689D /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../../../Downloads/GHUnitIOS.framework; sourceTree = "<group>"; };
 		0724216D198882FA00F6689D /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		0724216E198882FA00F6689D /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		072421A9198889A900F6689D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		072421AB1988B80700F6689D /* Tap4FoodGenerateRestaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tap4FoodGenerateRestaurants.h; path = Model/Tap4FoodGenerateRestaurants.h; sourceTree = "<group>"; };
 		072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tap4FoodGenerateRestaurants.m; path = Model/Tap4FoodGenerateRestaurants.m; sourceTree = "<group>"; };
+		072AB9BD1989457900D6F706 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		07650EBA1986CCCC002F1E5E /* RestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsViewController.h; sourceTree = "<group>"; };
 		07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsViewController.m; sourceTree = "<group>"; };
 		07FEA1651986C01C001234A0 /* Tap4Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tap4Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,17 +135,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072AB9BE1989457900D6F706 /* CoreLocation.framework in Frameworks */,
+				072AB9BC1989405200D6F706 /* Foundation.framework in Frameworks */,
 				072421AA198889A900F6689D /* MediaPlayer.framework in Frameworks */,
 				072421A8198889A000F6689D /* SystemConfiguration.framework in Frameworks */,
 				072421A61988898D00F6689D /* MobileCoreServices.framework in Frameworks */,
 				072421A41988895D00F6689D /* CFNetwork.framework in Frameworks */,
-				072421291986FCAF00F6689D /* YAJLiOS.framework in Frameworks */,
 				071A2DB61986E4D200B00665 /* libxml2.dylib in Frameworks */,
 				071A2DB41986E4BC00B00665 /* Security.framework in Frameworks */,
 				0724212B1986FD0900F6689D /* GHUnitIOS.framework in Frameworks */,
 				07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */,
 				07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */,
-				07FEA1691986C01C001234A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,12 +253,12 @@
 		07FEA1671986C01C001234A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				072AB9BD1989457900D6F706 /* CoreLocation.framework */,
 				072421A9198889A900F6689D /* MediaPlayer.framework */,
 				072421A7198889A000F6689D /* SystemConfiguration.framework */,
 				072421A51988898D00F6689D /* MobileCoreServices.framework */,
 				072421A31988895D00F6689D /* CFNetwork.framework */,
 				0724212A1986FD0900F6689D /* GHUnitIOS.framework */,
-				072421281986FCAF00F6689D /* YAJLiOS.framework */,
 				071A2DB51986E4D200B00665 /* libxml2.dylib */,
 				071A2DB31986E4BC00B00665 /* Security.framework */,
 				07FEA1681986C01C001234A0 /* Foundation.framework */,

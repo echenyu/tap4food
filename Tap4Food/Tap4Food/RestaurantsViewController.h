@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface RestaurantsViewController : UIViewController <NSURLConnectionDelegate>
+@interface RestaurantsViewController : UIViewController <CLLocationManagerDelegate>
 
 @end
