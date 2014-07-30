@@ -8,19 +8,29 @@
 
 #import "RestaurantsViewController.h"
 #import "OAuthConsumer.h"
+#import <YAJLiOS/YAJL.h>
+#import <GHUnitIOS/GHUnit.h>
 
 @interface RestaurantsViewController ()
-@property (nonatomic, strong)NSMutableData *yelpResults;
+@property (nonatomic, strong)NSDictionary *yelpResults;
+@property (nonatomic, strong)NSMutableData *actualYelpResults;
 
 @end
 
 @implementation RestaurantsViewController
 
--(NSData *)yelpResults {
+-(NSDictionary *)yelpResults {
     if (!_yelpResults) {
-        _yelpResults = [[NSMutableData alloc]init];
+        _yelpResults = [[NSDictionary alloc]init];
     }
     return _yelpResults;
+}
+
+-(NSMutableData *)actualYelpResults {
+    if(!_actualYelpResults) {
+        _actualYelpResults = [[NSMutableData alloc]init];
+    }
+    return _actualYelpResults;
 }
 
 - (void)viewDidLoad
@@ -40,22 +50,65 @@
     //Use Oauth to authorize the user/the app to use Yelp's API
     
     OAConsumer *consumer = [[OAConsumer alloc]initWithKey:@"D2WSy72QA5ilrtzEq7U-kg" secret:@"7WzTKp11knWN3dFT4MkjPjuiCk4"];
-    OAToken *token = [[OAToken alloc]initWithKey:@"x-qRDH6wasCJ5lfpp0QMw1n_ZEQpAyUw" secret:@"6nlB_E-kg0dDNr5t1wn3iSu5WIw"];
+    
+    OAToken *token = [[OAToken alloc]initWithKey:@"2wgDXaivi_U-uFRGL4jNMnsVkyQqoZPU" secret:@"LdGfbZ4Bi6Q3eW7zEWLPhIJWReM"];
+    
+    id<OASignatureProviding, NSObject> provider = [[OAHMAC_SHA1SignatureProvider alloc]init];
     
     NSURL *URL = [NSURL URLWithString:@"http://api.yelp.com/v2/search?term=restaurants&location=new%20york"];
     
     OAMutableURLRequest *request = [[OAMutableURLRequest alloc]initWithURL:URL
                                                                   consumer:consumer
-                                                                     token:token
+                                                                    token:token
                                                                      realm:nil
-                                                         signatureProvider:nil];
+                                                         signatureProvider:provider];
     
     [request setHTTPMethod:@"GET"];
+    [request prepare];
     
-    self.yelpResults = [NSMutableData dataWithContentsOfURL:URL];
+//    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+//    
+    NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        NSLog(@"%@",data);
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        
+        NSDictionary *itemsArray = [jsonArray objectAtIndex: 0];
+        NSString *string = [itemsArray objectForKey:@"businesses"];
+        NSLog(@"%@ is string", string);
+    }];
+    
+    [task resume];
     NSLog(@"%@ haha", self.yelpResults);
+    //[connection description];
     
     
+}
+- (IBAction)button:(id)sender {
+    NSLog(@"%@ stuff", self.yelpResults);
+    NSLog(@"%@ other stuff", self.actualYelpResults);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    self.yelpResults = 0;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSDictionary *restaurantData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    self.yelpResults = restaurantData;
+    [_actualYelpResults appendData:data];
+    NSDictionary *propertyList = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:0
+                                                                   error:NULL];
+    NSLog(@"Flickr %@", propertyList);
+    //NSLog(@"%@ is JSON", JSON);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Error: %@, %@", [error localizedDescription], [error localizedFailureReason]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"%@ of stuff", self.yelpResults); 
 }
 
 /*
