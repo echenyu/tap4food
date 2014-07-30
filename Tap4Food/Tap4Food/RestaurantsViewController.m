@@ -63,15 +63,24 @@
                                                                      realm:nil
                                                          signatureProvider:provider];
     
-    //[request setHTTPMethod:@"GET"];
+    [request setHTTPMethod:@"GET"];
     [request prepare];
     
-    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+//    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+//    
+    NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        NSLog(@"%@",data);
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        
+        NSDictionary *itemsArray = [jsonArray objectAtIndex: 0];
+        NSString *string = [itemsArray objectForKey:@"businesses"];
+        NSLog(@"%@ is string", string);
+    }];
     
-    
-    //self.yelpResults = [NSMutableData dataWithContentsOfURL:URL];
+    [task resume];
     NSLog(@"%@ haha", self.yelpResults);
-    [connection description];
+    //[connection description];
+    
     
 }
 - (IBAction)button:(id)sender {
@@ -87,6 +96,11 @@
     NSDictionary *restaurantData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     self.yelpResults = restaurantData;
     [_actualYelpResults appendData:data];
+    NSDictionary *propertyList = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:0
+                                                                   error:NULL];
+    NSLog(@"Flickr %@", propertyList);
+    //NSLog(@"%@ is JSON", JSON);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
