@@ -18,8 +18,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantName;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantPicture;
+
 @property (nonatomic, strong)UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong)UIImage *restaurantImage;
+@property (nonatomic, strong)CLLocationManager *currentLocationManager;
 
 @end
 
@@ -40,6 +42,16 @@
     return _restaurantImage;
 }
 
+-(CLLocationManager *)currentLocationManager {
+    if (!_currentLocationManager) {
+        _currentLocationManager = [[CLLocationManager alloc]init];
+        _currentLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _currentLocationManager.delegate = self;
+
+    }
+    return _currentLocationManager;
+}
+
 -(void)viewWillAppear:(BOOL)animated {
     [self.activityIndicator startAnimating];
     [self.view addSubview:self.activityIndicator];
@@ -48,7 +60,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //Make sure the user can't change the phone number
+    self.phoneNumber.enabled = NO;
+    
     [self setupRestaurants];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(activitySpinnerEnd)
@@ -64,6 +78,13 @@
 }
 
 -(void)setupRestaurants {
+    //Get user's location information from here
+    [self.currentLocationManager startUpdatingLocation];
+    CLLocation *currentLocation = [self.currentLocationManager location];
+    float latitude = currentLocation.coordinate.latitude;
+    float longitude = currentLocation.coordinate.longitude;
+    
+    NSLog(@"%f haha", currentLocation.coordinate.latitude);
     //Use Oauth to authorize the user/the app to use Yelp's API
     OAConsumer *consumer = [[OAConsumer alloc]initWithKey:@"D2WSy72QA5ilrtzEq7U-kg" secret:@"7WzTKp11knWN3dFT4MkjPjuiCk4"];
     
@@ -71,7 +92,9 @@
     
     id<OASignatureProviding, NSObject> provider = [[OAHMAC_SHA1SignatureProvider alloc]init];
     
-    NSURL *URL = [NSURL URLWithString:@"http://api.yelp.com/v2/search?term=restaurants&location=new%20york"];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&ll=%f,%f&radius_filter=10000",latitude,longitude];
+    
+    NSURL *URL = [NSURL URLWithString: urlString];
     
     OAMutableURLRequest *request = [[OAMutableURLRequest alloc]initWithURL:URL
                                                                   consumer:consumer
