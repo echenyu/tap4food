@@ -33,8 +33,8 @@
 		072421A8198889A000F6689D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A7198889A000F6689D /* SystemConfiguration.framework */; };
 		072421AA198889A900F6689D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A9198889A900F6689D /* MediaPlayer.framework */; };
 		072421AD1988B80700F6689D /* Tap4FoodGenerateRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */; };
+		072AB9BC1989405200D6F706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA1681986C01C001234A0 /* Foundation.framework */; };
 		07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */; };
-		07FEA1691986C01C001234A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA1681986C01C001234A0 /* Foundation.framework */; };
 		07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16A1986C01C001234A0 /* CoreGraphics.framework */; };
 		07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16C1986C01C001234A0 /* UIKit.framework */; };
 		07FEA1731986C01C001234A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07FEA1711986C01C001234A0 /* InfoPlist.strings */; };
@@ -135,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072AB9BC1989405200D6F706 /* Foundation.framework in Frameworks */,
 				072421AA198889A900F6689D /* MediaPlayer.framework in Frameworks */,
 				072421A8198889A000F6689D /* SystemConfiguration.framework in Frameworks */,
 				072421A61988898D00F6689D /* MobileCoreServices.framework in Frameworks */,
@@ -145,7 +146,6 @@
 				0724212B1986FD0900F6689D /* GHUnitIOS.framework in Frameworks */,
 				07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */,
 				07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */,
-				07FEA1691986C01C001234A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
