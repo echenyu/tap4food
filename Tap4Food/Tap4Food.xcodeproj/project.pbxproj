@@ -32,6 +32,7 @@
 		072421A61988898D00F6689D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A51988898D00F6689D /* MobileCoreServices.framework */; };
 		072421A8198889A000F6689D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A7198889A000F6689D /* SystemConfiguration.framework */; };
 		072421AA198889A900F6689D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A9198889A900F6689D /* MediaPlayer.framework */; };
+		072421AD1988B80700F6689D /* Tap4FoodGenerateRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */; };
 		07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */; };
 		07FEA1691986C01C001234A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA1681986C01C001234A0 /* Foundation.framework */; };
 		07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16A1986C01C001234A0 /* CoreGraphics.framework */; };
@@ -104,6 +105,8 @@
 		072421A51988898D00F6689D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		072421A7198889A000F6689D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		072421A9198889A900F6689D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		072421AB1988B80700F6689D /* Tap4FoodGenerateRestaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tap4FoodGenerateRestaurants.h; path = Model/Tap4FoodGenerateRestaurants.h; sourceTree = "<group>"; };
+		072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tap4FoodGenerateRestaurants.m; path = Model/Tap4FoodGenerateRestaurants.m; sourceTree = "<group>"; };
 		07650EBA1986CCCC002F1E5E /* RestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsViewController.h; sourceTree = "<group>"; };
 		07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsViewController.m; sourceTree = "<group>"; };
 		07FEA1651986C01C001234A0 /* Tap4Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tap4Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +222,15 @@
 			path = Crytpo;
 			sourceTree = "<group>";
 		};
+		072421AE1988BA6100F6689D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				072421AB1988B80700F6689D /* Tap4FoodGenerateRestaurants.h */,
+				072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		07FEA15C1986C01C001234A0 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +280,7 @@
 				07FEA17E1986C01C001234A0 /* Tap4FoodViewController.m */,
 				07650EBA1986CCCC002F1E5E /* RestaurantsViewController.h */,
 				07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */,
+				072421AE1988BA6100F6689D /* Model */,
 				07FEA1801986C01C001234A0 /* Images.xcassets */,
 				07FEA16F1986C01C001234A0 /* Supporting Files */,
 			);
@@ -411,6 +424,7 @@
 				07242199198882FA00F6689D /* OAConsumer.m in Sources */,
 				07FEA1751986C01C001234A0 /* main.m in Sources */,
 				0724219F198882FA00F6689D /* OARequestParameter.m in Sources */,
+				072421AD1988B80700F6689D /* Tap4FoodGenerateRestaurants.m in Sources */,
 				07242198198882FA00F6689D /* OACall.m in Sources */,
 				07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */,
 				07FEA1791986C01C001234A0 /* Tap4FoodAppDelegate.m in Sources */,
