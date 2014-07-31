@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface Tap4FoodViewController : UIViewController
+
+@interface Tap4FoodViewController : UIViewController <CLLocationManagerDelegate>
 
 @end

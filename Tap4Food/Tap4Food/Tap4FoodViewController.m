@@ -10,12 +10,24 @@
 #import "OAuthConsumer.h"
 #import <YAJLiOS/YAJL.h>
 #import <GHUnitIOS/GHUnit.h>
+#import "RestaurantsViewController.h"
 
 @interface Tap4FoodViewController ()
+@property (nonatomic,strong)CLLocationManager *currentLocationManager;
 
 @end
 
 @implementation Tap4FoodViewController
+
+-(CLLocationManager *)currentLocationManager {
+    if (!_currentLocationManager) {
+        _currentLocationManager = [[CLLocationManager alloc]init];
+        _currentLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _currentLocationManager.delegate = self;
+        
+    }
+    return _currentLocationManager;
+}
 
 - (void)viewDidLoad
 {
@@ -33,7 +45,6 @@
 
 -(IBAction)generateRandomRestaurants:(id)sender {
     [self performSegueWithIdentifier:@"pushSegue" sender:self];
-
 }
 
 -(void)setup {
@@ -46,5 +57,17 @@
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    CLLocation *currentLocation = [self.currentLocationManager location];
+    float latitude = currentLocation.coordinate.latitude;
+    float longitude = currentLocation.coordinate.longitude;
+    RestaurantsViewController *rViewController = [segue destinationViewController];
+    rViewController.latitude = latitude;
+    rViewController.longitude = longitude;
 }
 @end
