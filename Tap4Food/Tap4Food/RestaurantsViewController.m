@@ -15,11 +15,14 @@
     NSDictionary *resultsFromYelp;
     NSArray *restaurantsFromYelp;
 }
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantName;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantPicture;
-@property (weak, nonatomic) IBOutlet UITextField *restaurantAddress;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantAddress;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantRating;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfRatings;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantDescription;
 
 
 @property (nonatomic, strong)UIActivityIndicatorView *activityIndicator;
@@ -45,16 +48,6 @@
     return _restaurantImage;
 }
 
--(CLLocationManager *)currentLocationManager {
-    if (!_currentLocationManager) {
-        _currentLocationManager = [[CLLocationManager alloc]init];
-        _currentLocationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        _currentLocationManager.delegate = self;
-
-    }
-    return _currentLocationManager;
-}
-
 -(void)viewWillAppear:(BOOL)animated {
     [self.activityIndicator startAnimating];
     [self.view addSubview:self.activityIndicator];
@@ -65,10 +58,15 @@
     [super viewDidLoad];
     //Make sure the user can't change the phone number
     self.phoneNumber.enabled = NO;
+    
     self.restaurantAddress.enabled = NO;
-    [self.restaurantName adjustsFontSizeToFitWidth];
+    self.restaurantName.adjustsFontSizeToFitWidth = YES;
+    self.restaurantAddress.adjustsFontSizeToFitWidth = YES;
     [self.currentLocationManager startUpdatingLocation];
+    
     [self setupRestaurants];
+    
+    //ADD observers here
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(activitySpinnerEnd)
                                                 name:@"NSURLSessionNotification"
@@ -82,13 +80,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//Setup all restaurants when the view is first loaded.
 -(void)setupRestaurants {
     //Get user's location information from here
-    CLLocation *currentLocation = [self.currentLocationManager location];
-    float latitude = currentLocation.coordinate.latitude;
-    float longitude = currentLocation.coordinate.longitude;
     
-    NSLog(@"%f latitude. %f longitude", latitude, longitude);
+    
+    NSLog(@"%f latitude. %f longitude", _latitude, _longitude);
+    
     //Use Oauth to authorize the user/the app to use Yelp's API
     OAConsumer *consumer = [[OAConsumer alloc]initWithKey:@"D2WSy72QA5ilrtzEq7U-kg" secret:@"7WzTKp11knWN3dFT4MkjPjuiCk4"];
     
@@ -96,7 +95,7 @@
     
     id<OASignatureProviding, NSObject> provider = [[OAHMAC_SHA1SignatureProvider alloc]init];
     
-    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&ll=%f,%f",latitude,longitude];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&ll=%f,%f",_latitude,_longitude];
     
     NSURL *URL = [NSURL URLWithString: urlString];
     
@@ -147,10 +146,19 @@
         imageData = [[NSData alloc]initWithContentsOfURL:imageUrl];
         self.restaurantPicture.image = [UIImage imageWithData:imageData];
     }
+    NSString *phoneNumber = [pickedRestaurant objectForKey:@"display_phone"];
+    NSMutableAttributedString *attributedPhoneNumber = [[NSMutableAttributedString alloc]initWithString:phoneNumber];
     
-    NSLog(@"random place %@", [pickedRestaurant objectForKey:@"name"]);
+    [attributedPhoneNumber addAttribute:NSForegroundColorAttributeName
+                                  value:[UIColor blueColor]
+                                  range:NSMakeRange(0, [attributedPhoneNumber length])];
+    [attributedPhoneNumber addAttribute:NSUnderlineStyleAttributeName
+                                  value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
+                                  range:NSMakeRange(0, [attributedPhoneNumber length])];
+    
+    NSLog(@"random place %@", [pickedRestaurant objectForKey:@"review_count"]);
     self.restaurantName.text = [pickedRestaurant objectForKey:@"name"];
-    self.phoneNumber.text = [pickedRestaurant objectForKey:@"display_phone"];
+    self.phoneNumber.attributedText = attributedPhoneNumber;
     NSDictionary *addressDictionary = [pickedRestaurant objectForKey:@"location"];
     NSArray *address = [addressDictionary objectForKey:@"display_address"];
     NSLog(@"%@", address);
@@ -159,7 +167,9 @@
     
     for (int i = 0; i < [address count]; i++) {
         addressString = [addressString stringByAppendingString:[address objectAtIndex:i]];
-        addressString = [addressString stringByAppendingString:@", "];
+        if(i != [address count] - 1) {
+            addressString = [addressString stringByAppendingString:@", \n"];
+        }
     }
     self.restaurantAddress.text = addressString;
     
@@ -178,6 +188,9 @@
         self.restaurantRating.image = [UIImage imageWithData:ratingImgData];
     }
     
+    self.numberOfRatings.text = [NSString stringWithFormat:@"%i reviews", (int)[pickedRestaurant objectForKey:@"review_count"] ];
+    
+    self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
 
 }
 
