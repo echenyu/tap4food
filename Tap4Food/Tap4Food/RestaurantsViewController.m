@@ -8,7 +8,6 @@
 
 #import "RestaurantsViewController.h"
 #import "OAuthConsumer.h"
-#import <YAJLiOS/YAJL.h>
 #import <GHUnitIOS/GHUnit.h>
 
 @interface RestaurantsViewController () {
@@ -57,8 +56,14 @@
 {
     [super viewDidLoad];
     //Make sure the user can't change the phone number
-    self.phoneNumber.enabled = NO;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
     
+    self.title = @"Tap4Food";
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Zapfino" size:14], NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    
+    self.phoneNumber.enabled = NO;
     self.restaurantAddress.enabled = NO;
     self.restaurantName.adjustsFontSizeToFitWidth = YES;
     self.restaurantAddress.adjustsFontSizeToFitWidth = YES;
@@ -95,7 +100,7 @@
     
     id<OASignatureProviding, NSObject> provider = [[OAHMAC_SHA1SignatureProvider alloc]init];
     
-    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&ll=%f,%f",_latitude,_longitude];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&sort=1&ll=%f,%f&radius_filter=1000",_latitude,_longitude];
     
     NSURL *URL = [NSURL URLWithString: urlString];
     
@@ -147,8 +152,8 @@
         self.restaurantPicture.image = [UIImage imageWithData:imageData];
     }
     NSString *phoneNumber = [pickedRestaurant objectForKey:@"display_phone"];
-    NSMutableAttributedString *attributedPhoneNumber = [[NSMutableAttributedString alloc]initWithString:phoneNumber];
     
+    NSMutableAttributedString *attributedPhoneNumber = [[NSMutableAttributedString alloc]initWithString:phoneNumber];
     [attributedPhoneNumber addAttribute:NSForegroundColorAttributeName
                                   value:[UIColor blueColor]
                                   range:NSMakeRange(0, [attributedPhoneNumber length])];

@@ -13,14 +13,14 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXF-Ns-G5t" userLabel="generateRandomRestaurants">
-                                <rect key="frame" x="111" y="224" width="99" height="56"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="80" y="224" width="160" height="55"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="24"/>
                                 <state key="normal" title="Tap4Food">
-                                    <color key="titleColor" red="0.047058828179999998" green="0.80392163989999998" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.22348312043795621" green="0.52794251824817517" blue="0.63137254901960782" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -37,6 +37,7 @@
                     <navigationItem key="navigationItem" id="GHW-Gl-9Sj"/>
                     <connections>
                         <segue destination="NW0-OB-lGX" kind="push" identifier="pushSegue" id="Lhx-Se-Kvn"/>
+                        <segue destination="I3F-aS-ngn" kind="push" identifier="settingsSegue" id="NmJ-fT-6as"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -52,40 +53,40 @@
                         <viewControllerLayoutGuide type="bottom" id="ETT-eE-WDK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ccj-sa-Tks">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKR-HX-LZP">
-                                <rect key="frame" x="19" y="7" width="281" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42f-Qt-68W">
-                                <rect key="frame" x="19" y="46" width="96" height="96"/>
+                                <rect key="frame" x="19" y="76" width="96" height="96"/>
                             </imageView>
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jkv-vc-0F5">
-                                <rect key="frame" x="136" y="46" width="77" height="15"/>
+                                <rect key="frame" x="157" y="78" width="56" height="12"/>
                             </imageView>
                             <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Yvo-yf-8F3">
-                                <rect key="frame" x="180" y="76" width="121" height="15"/>
+                                <rect key="frame" x="180" y="106" width="121" height="15"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-n4-Yp9">
-                                <rect key="frame" x="221" y="46" width="80" height="15"/>
+                                <rect key="frame" x="221" y="76" width="80" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="UUJ-ow-WLb">
-                                <rect key="frame" x="21" y="167" width="280" height="88"/>
+                                <rect key="frame" x="21" y="197" width="280" height="88"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="143" translatesAutoresizingMaskIntoConstraints="NO" id="TSM-pZ-OXs">
-                                <rect key="frame" x="157" y="99" width="143" height="60"/>
+                                <rect key="frame" x="157" y="129" width="143" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKR-HX-LZP">
+                                <rect key="frame" x="19" y="20" width="281" height="47"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -105,6 +106,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9V-dM-QIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1120" y="-95"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="84B-Ng-oGb">
+            <objects>
+                <viewController id="I3F-aS-ngn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mBT-BK-eJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="RZf-LU-pW3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0kG-uk-DCB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="90b-al-CPt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wny-e0-Ts4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120" y="510"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wwC-pT-JIy">
@@ -128,7 +148,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>
