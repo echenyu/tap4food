@@ -13,6 +13,7 @@
 @interface RestaurantsViewController () {
     NSDictionary *resultsFromYelp;
     NSArray *restaurantsFromYelp;
+    
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
@@ -23,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfRatings;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantDescription;
 
-
+@property (strong, nonatomic) NSNumber *numberOfMetersFilter;
 @property (nonatomic, strong)UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong)UIImage *restaurantImage;
 @property (nonatomic, strong)CLLocationManager *currentLocationManager;
@@ -55,17 +56,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Make sure the user can't change the phone number
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    
+    //Set the number of meters to search around.
+    int metersFilter = (int)[settings integerForKey:@"numberOfMeters"];
+    if(!metersFilter) {
+        self.numberOfMetersFilter = [NSNumber numberWithInt: 5000];
+    } else {
+        self.numberOfMetersFilter = [NSNumber numberWithInt:metersFilter];
+    }
+
+    
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
     
     self.title = @"Tap4Food";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Zapfino" size:14], NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+
     
     self.phoneNumber.enabled = NO;
     self.restaurantAddress.enabled = NO;
     self.restaurantName.adjustsFontSizeToFitWidth = YES;
+    self.restaurantName.minimumScaleFactor = 8/20;
     self.restaurantAddress.adjustsFontSizeToFitWidth = YES;
     [self.currentLocationManager startUpdatingLocation];
     
@@ -88,11 +101,6 @@
 
 //Setup all restaurants when the view is first loaded.
 -(void)setupRestaurants {
-    //Get user's location information from here
-    
-    
-    NSLog(@"%f latitude. %f longitude", _latitude, _longitude);
-    
     //Use Oauth to authorize the user/the app to use Yelp's API
     OAConsumer *consumer = [[OAConsumer alloc]initWithKey:@"D2WSy72QA5ilrtzEq7U-kg" secret:@"7WzTKp11knWN3dFT4MkjPjuiCk4"];
     
@@ -100,7 +108,8 @@
     
     id<OASignatureProviding, NSObject> provider = [[OAHMAC_SHA1SignatureProvider alloc]init];
     
-    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&sort=1&ll=%f,%f&radius_filter=1000",_latitude,_longitude];
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&sort=1&ll=%f,%f&radius_filter=%i",_latitude,_longitude, [self.numberOfMetersFilter intValue]];
     
     NSURL *URL = [NSURL URLWithString: urlString];
     
@@ -132,7 +141,7 @@
 -(void)pickRandomRestaurant {
     int numberOfRestaurants = (int)[restaurantsFromYelp count];
     int randomRestaurantNumber = arc4random()%numberOfRestaurants;
-    NSLog(@"%@ is what we have to work with", restaurantsFromYelp);
+
     NSLog(@"The random restaurant number is %i: number of restaurants is %i", randomRestaurantNumber, numberOfRestaurants);
     
     NSDictionary *pickedRestaurant = [restaurantsFromYelp objectAtIndex:randomRestaurantNumber];
@@ -161,12 +170,10 @@
                                   value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
                                   range:NSMakeRange(0, [attributedPhoneNumber length])];
     
-    NSLog(@"random place %@", [pickedRestaurant objectForKey:@"review_count"]);
     self.restaurantName.text = [pickedRestaurant objectForKey:@"name"];
     self.phoneNumber.attributedText = attributedPhoneNumber;
     NSDictionary *addressDictionary = [pickedRestaurant objectForKey:@"location"];
     NSArray *address = [addressDictionary objectForKey:@"display_address"];
-    NSLog(@"%@", address);
    
     NSString *addressString = [[NSString alloc]init];
     
@@ -205,6 +212,11 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     //NSLog(@"%@ locations", locations);
+}
+
+-(void)tabControlDistanceFilter:(int)distanceData {
+    self.numberOfMetersFilter = [NSNumber numberWithInt: distanceData];
+    NSLog(@"did this happen");
 }
 /*
 #pragma mark - Navigation
