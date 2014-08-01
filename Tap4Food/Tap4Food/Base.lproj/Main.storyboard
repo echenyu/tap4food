@@ -57,35 +57,35 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42f-Qt-68W">
-                                <rect key="frame" x="19" y="76" width="96" height="96"/>
+                                <rect key="frame" x="19" y="75" width="90" height="90"/>
                             </imageView>
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jkv-vc-0F5">
-                                <rect key="frame" x="157" y="78" width="56" height="12"/>
+                                <rect key="frame" x="157" y="75" width="56" height="12"/>
                             </imageView>
                             <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Yvo-yf-8F3">
-                                <rect key="frame" x="180" y="106" width="121" height="15"/>
+                                <rect key="frame" x="180" y="105" width="121" height="15"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxW-n4-Yp9">
-                                <rect key="frame" x="221" y="76" width="80" height="15"/>
+                                <rect key="frame" x="221" y="73" width="80" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="UUJ-ow-WLb">
-                                <rect key="frame" x="21" y="197" width="280" height="88"/>
+                                <rect key="frame" x="21" y="196" width="280" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="143" translatesAutoresizingMaskIntoConstraints="NO" id="TSM-pZ-OXs">
-                                <rect key="frame" x="157" y="129" width="143" height="60"/>
+                                <rect key="frame" x="157" y="128" width="143" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKR-HX-LZP">
-                                <rect key="frame" x="19" y="20" width="281" height="47"/>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="24"/>
+                                <rect key="frame" x="21" y="16" width="279" height="56"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -107,20 +107,46 @@
             </objects>
             <point key="canvasLocation" x="1120" y="-95"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="84B-Ng-oGb">
             <objects>
-                <viewController id="I3F-aS-ngn" sceneMemberID="viewController">
+                <viewController id="I3F-aS-ngn" customClass="settingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mBT-BK-eJe"/>
                         <viewControllerLayoutGuide type="bottom" id="RZf-LU-pW3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0kG-uk-DCB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance Filter (miles)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DS-ZD-QO3">
+                                <rect key="frame" x="78" y="38" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.19215686269999999" green="0.3411764706" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1js-KX-qe3">
+                                <rect key="frame" x="47" y="67" width="227" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="1/2"/>
+                                    <segment title="1"/>
+                                    <segment title="3"/>
+                                    <segment title="5"/>
+                                    <segment title="10"/>
+                                </segments>
+                                <color key="tintColor" red="0.19215686269999999" green="0.3411764706" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="distanceChange:" destination="I3F-aS-ngn" eventType="valueChanged" id="YHj-OR-78L"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="90b-al-CPt"/>
+                    <connections>
+                        <outlet property="distanceSegmentControl" destination="1js-KX-qe3" id="YdO-ey-siQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wny-e0-Ts4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

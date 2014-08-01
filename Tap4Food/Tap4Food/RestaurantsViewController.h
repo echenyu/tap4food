@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "settingsViewController.h"
 
 @interface RestaurantsViewController : UIViewController 
 @property float latitude;
 @property float longitude;
-
 @end
