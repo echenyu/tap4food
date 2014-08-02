@@ -12,5 +12,4 @@
 @interface RestaurantsViewController : UIViewController 
 @property float latitude;
 @property float longitude;
-
 @end

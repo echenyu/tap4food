@@ -7,12 +7,15 @@
 //
 
 #import "Tap4FoodAppDelegate.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation Tap4FoodAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [GMSServices provideAPIKey:@"AIzaSyAixWphNFja6CjVum87_xVkRBUrp9F4q-I"];
+
     return YES;
 }
 							

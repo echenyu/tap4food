@@ -9,21 +9,29 @@
 #import "RestaurantsViewController.h"
 #import "OAuthConsumer.h"
 #import <GHUnitIOS/GHUnit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface RestaurantsViewController () {
     NSDictionary *resultsFromYelp;
     NSArray *restaurantsFromYelp;
+    double restaurantLongitude;
+    double restaurantLatitude;
+    double restaurantDistance;
+    int phoneCallNumber;
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UIView *googleMap;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantName;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantPicture;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantAddress;
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantRating;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfRatings;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantDescription;
+@property (weak, nonatomic) IBOutlet UILabel *distanceFromCurrent;
 
-
+@property (strong,nonatomic)GMSMapView *mapView;
+@property (strong, nonatomic) NSNumber *numberOfMetersFilter;
 @property (nonatomic, strong)UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong)UIImage *restaurantImage;
 @property (nonatomic, strong)CLLocationManager *currentLocationManager;
@@ -55,19 +63,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Make sure the user can't change the phone number
+    self.phoneNumber.userInteractionEnabled = YES;
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    
+    //Set the number of meters to search around.
+    int metersFilter = (int)[settings integerForKey:@"numberOfMeters"];
+    if(!metersFilter) {
+        self.numberOfMetersFilter = [NSNumber numberWithInt: 5000];
+    } else {
+        self.numberOfMetersFilter = [NSNumber numberWithInt:metersFilter];
+    }
+
+    
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
     
     self.title = @"Tap4Food";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Zapfino" size:14], NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+
+   
     
-    self.phoneNumber.enabled = NO;
     self.restaurantAddress.enabled = NO;
     self.restaurantName.adjustsFontSizeToFitWidth = YES;
+    self.restaurantName.minimumScaleFactor = 8/20;
     self.restaurantAddress.adjustsFontSizeToFitWidth = YES;
+    self.phoneNumber.adjustsFontSizeToFitWidth = YES;
+    self.distanceFromCurrent.adjustsFontSizeToFitWidth = YES;
     [self.currentLocationManager startUpdatingLocation];
+    
     
     [self setupRestaurants];
     
@@ -88,11 +112,6 @@
 
 //Setup all restaurants when the view is first loaded.
 -(void)setupRestaurants {
-    //Get user's location information from here
-    
-    
-    NSLog(@"%f latitude. %f longitude", _latitude, _longitude);
-    
     //Use Oauth to authorize the user/the app to use Yelp's API
     OAConsumer *consumer = [[OAConsumer alloc]initWithKey:@"D2WSy72QA5ilrtzEq7U-kg" secret:@"7WzTKp11knWN3dFT4MkjPjuiCk4"];
     
@@ -100,7 +119,8 @@
     
     id<OASignatureProviding, NSObject> provider = [[OAHMAC_SHA1SignatureProvider alloc]init];
     
-    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&sort=1&ll=%f,%f&radius_filter=1000",_latitude,_longitude];
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&sort=1&ll=%f,%f&radius_filter=%i",_latitude,_longitude, [self.numberOfMetersFilter intValue]];
     
     NSURL *URL = [NSURL URLWithString: urlString];
     
@@ -121,6 +141,7 @@
             resultsFromYelp = jsonDictionary;
             restaurantsFromYelp = businesses;
             [self pickRandomRestaurant];
+            [self setupMap];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NSURLSessionNotification" object:nil userInfo:nil];
         });
         
@@ -132,7 +153,7 @@
 -(void)pickRandomRestaurant {
     int numberOfRestaurants = (int)[restaurantsFromYelp count];
     int randomRestaurantNumber = arc4random()%numberOfRestaurants;
-    NSLog(@"%@ is what we have to work with", restaurantsFromYelp);
+
     NSLog(@"The random restaurant number is %i: number of restaurants is %i", randomRestaurantNumber, numberOfRestaurants);
     
     NSDictionary *pickedRestaurant = [restaurantsFromYelp objectAtIndex:randomRestaurantNumber];
@@ -151,6 +172,7 @@
         imageData = [[NSData alloc]initWithContentsOfURL:imageUrl];
         self.restaurantPicture.image = [UIImage imageWithData:imageData];
     }
+    
     NSString *phoneNumber = [pickedRestaurant objectForKey:@"display_phone"];
     
     NSMutableAttributedString *attributedPhoneNumber = [[NSMutableAttributedString alloc]initWithString:phoneNumber];
@@ -160,22 +182,29 @@
     [attributedPhoneNumber addAttribute:NSUnderlineStyleAttributeName
                                   value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
                                   range:NSMakeRange(0, [attributedPhoneNumber length])];
-    
-    NSLog(@"random place %@", [pickedRestaurant objectForKey:@"review_count"]);
-    self.restaurantName.text = [pickedRestaurant objectForKey:@"name"];
     self.phoneNumber.attributedText = attributedPhoneNumber;
+
+    self.restaurantName.text = [pickedRestaurant objectForKey:@"name"];
+    
     NSDictionary *addressDictionary = [pickedRestaurant objectForKey:@"location"];
     NSArray *address = [addressDictionary objectForKey:@"display_address"];
-    NSLog(@"%@", address);
-   
     NSString *addressString = [[NSString alloc]init];
     
     for (int i = 0; i < [address count]; i++) {
         addressString = [addressString stringByAppendingString:[address objectAtIndex:i]];
         if(i != [address count] - 1) {
-            addressString = [addressString stringByAppendingString:@", \n"];
+            addressString = [addressString stringByAppendingString:@", "];
         }
     }
+    
+    NSDictionary *restaurantLatAndLong = [addressDictionary objectForKey:@"coordinate"];
+    NSLog(@"%@ all data", pickedRestaurant);
+    NSLog(@"%@ lat, and  long", restaurantLatAndLong);
+    
+    restaurantLatitude = [[restaurantLatAndLong objectForKey:@"latitude"]doubleValue];
+    restaurantLongitude = [[restaurantLatAndLong objectForKey:@"longitude"]doubleValue];
+    restaurantDistance = [[pickedRestaurant objectForKey:@"distance"]doubleValue];
+    NSLog(@"%f, %f", restaurantLatitude, restaurantLongitude);
     self.restaurantAddress.text = addressString;
     
     NSURL *ratingImgURL;
@@ -196,7 +225,29 @@
     self.numberOfRatings.text = [NSString stringWithFormat:@"%i reviews", (int)[pickedRestaurant objectForKey:@"review_count"] ];
     
     self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
+    phoneCallNumber = [[pickedRestaurant objectForKey:@"phone"]intValue];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(phoneCallRecognizer)];
+    [self.phoneNumber addGestureRecognizer:tapGesture];
+    self.distanceFromCurrent.text = [NSString stringWithFormat: @"Distance: %.2f miles",restaurantDistance* 0.00062137];
+}
 
+-(void)setupMap {
+    int zoomLevel = [self zoomLevel];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.latitude
+                                                            longitude:self.longitude
+                                                                 zoom:zoomLevel];
+     self.mapView = [GMSMapView mapWithFrame:self.googleMap.bounds camera:camera];
+    self.mapView.myLocationEnabled = YES;
+    self.mapView.settings.compassButton = YES;
+    self.mapView.settings.myLocationButton = YES;
+    
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(restaurantLatitude, restaurantLongitude);
+    marker.appearAnimation = kGMSMarkerAnimationPop;
+    marker.map = self.mapView;
+    
+    [self.googleMap addSubview: self.mapView];
 }
 
 -(void)activitySpinnerEnd {
@@ -205,6 +256,29 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     //NSLog(@"%@ locations", locations);
+}
+
+-(void)tabControlDistanceFilter:(int)distanceData {
+    self.numberOfMetersFilter = [NSNumber numberWithInt: distanceData];
+    NSLog(@"did this happen");
+}
+
+-(int)zoomLevel {
+    if(restaurantDistance < 200) {
+        return 16;
+    } else if(restaurantDistance < 500) {
+        return 15;
+    } else if(restaurantDistance < 1000) {
+        return 14;
+    } else if (restaurantDistance < 2000) {
+        return 13;
+    } else {
+        return 12;
+    }
+}
+
+-(void)phoneCallRecognizer {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%i",phoneCallNumber]]];
 }
 /*
 #pragma mark - Navigation
