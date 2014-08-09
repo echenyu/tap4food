@@ -23,7 +23,6 @@
     NSString *url = [NSString stringWithFormat:@"%@address=%@&sensor=false", googleURL, address];
     NSString* string = [url stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSURL *query = [NSURL URLWithString:string];
-   
     dispatch_async(kBgQueue, ^{
         NSData *data = [NSData dataWithContentsOfURL:query];
         [self fetchedData:data];
@@ -44,6 +43,8 @@
     NSDictionary *gc = [[NSDictionary alloc]initWithObjectsAndKeys:lat, @"lat", lng, @"lng", nil];
     self.latAndLong = gc;
     NSLog(@"%@", gc);
+    
+    //Doing this for now to wait for the information to finish being parsed before calling a method in the Restaurants view controller. Try to think of a different way to do this. 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"t4fLatAndLongReceived" object:nil];
 }
 @end
