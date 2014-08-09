@@ -253,7 +253,7 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
                                                                                 action:@selector(phoneCallRecognizer)];
     [self.phoneNumber addGestureRecognizer:tapGesture];
-    self.distanceFromCurrent.text = [NSString stringWithFormat: @"%.2f miles",restaurantDistance* 0.00062137];
+    self.distanceFromCurrent.text = [NSString stringWithFormat: @"%.2f miles",restaurantDistance* 0.00086763];
     self.phoneIcon.image = [UIImage imageNamed:@"phoneImage"];
     self.locationIcon.image = [UIImage imageNamed:@"Location"];
     [self setupMap];
