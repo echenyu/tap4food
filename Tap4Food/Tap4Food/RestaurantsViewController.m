@@ -33,7 +33,10 @@
 @property (weak, nonatomic) IBOutlet UITextView *connectionErrorView;
 @property (weak, nonatomic) IBOutlet UIImageView *phoneIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *locationIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *yelpImage;
+@property (weak, nonatomic) IBOutlet UIButton *seeMoreOnYelpText;
 
+@property (nonatomic, strong)NSString *restaurantUrl;
 @property (strong,nonatomic)GMSMapView *mapView;
 @property (strong, nonatomic) NSNumber *numberOfMetersFilter;
 @property (nonatomic, strong)UIActivityIndicatorView *activityIndicator;
@@ -70,6 +73,13 @@
 -(void)viewWillAppear:(BOOL)animated {
     [self.activityIndicator startAnimating];
     [self.view addSubview:self.activityIndicator];
+}
+
+-(NSString *)restaurantUrl {
+    if (!_restaurantUrl) {
+        _restaurantUrl = [[NSString alloc]init];
+    }
+    return _restaurantUrl;
 }
 
 - (void)viewDidLoad
@@ -249,14 +259,20 @@
     
     self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
     
+    self.restaurantUrl = [pickedRestaurant objectForKey:@"url"];
+    
     phoneCallNumber = [pickedRestaurant objectForKey:@"phone"];
+    [self.seeMoreOnYelpText setTitle:@"See more on" forState:UIControlStateNormal];
+    
     NSLog(@"%@", [pickedRestaurant objectForKey:@"phone"]);
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
                                                                                 action:@selector(phoneCallRecognizer)];
     [self.phoneNumber addGestureRecognizer:tapGesture];
     self.distanceFromCurrent.text = [NSString stringWithFormat: @"%.2f miles",restaurantDistance* 0.00086763];
+    
     self.phoneIcon.image = [UIImage imageNamed:@"phoneImage"];
     self.locationIcon.image = [UIImage imageNamed:@"Location"];
+    self.yelpImage.image = [UIImage imageNamed:@"yelpLogo"];
     [self setupMap];
     [self getLatAndLong:addressString];
 }
@@ -323,6 +339,13 @@
     NSLog(@"%f and %f", restaurantLatitude, restaurantLongitude);
 
     [self addMarker];
+}
+
+- (IBAction)goToYelp:(id)sender {
+    NSURL *restaurantURL = [NSURL URLWithString:self.restaurantUrl];
+    if([[UIApplication sharedApplication]canOpenURL:restaurantURL]) {
+        [[UIApplication sharedApplication]openURL:restaurantURL];
+    }
 }
 /*
 #pragma mark - Navigation
