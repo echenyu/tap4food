@@ -31,7 +31,6 @@
 		072421A61988898D00F6689D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A51988898D00F6689D /* MobileCoreServices.framework */; };
 		072421A8198889A000F6689D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A7198889A000F6689D /* SystemConfiguration.framework */; };
 		072421AA198889A900F6689D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072421A9198889A900F6689D /* MediaPlayer.framework */; };
-		072421AD1988B80700F6689D /* Tap4FoodGenerateRestaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */; };
 		072AB9BC1989405200D6F706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA1681986C01C001234A0 /* Foundation.framework */; };
 		072AB9BE1989457900D6F706 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072AB9BD1989457900D6F706 /* CoreLocation.framework */; };
 		074F1D6C198C154A0011DB63 /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 074F1D6B198C154A0011DB63 /* settingsViewController.m */; };
@@ -48,6 +47,7 @@
 		074F1D83198C692E0011DB63 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074F1D82198C692E0011DB63 /* OpenGLES.framework */; };
 		074F1D85198C69350011DB63 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074F1D84198C69350011DB63 /* QuartzCore.framework */; };
 		07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */; };
+		07E2C1EA1995874100A9DB89 /* GeocodeLatAndLong.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2C1E91995874100A9DB89 /* GeocodeLatAndLong.m */; };
 		07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16A1986C01C001234A0 /* CoreGraphics.framework */; };
 		07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16C1986C01C001234A0 /* UIKit.framework */; };
 		07FEA1731986C01C001234A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07FEA1711986C01C001234A0 /* InfoPlist.strings */; };
@@ -117,8 +117,6 @@
 		072421A51988898D00F6689D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		072421A7198889A000F6689D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		072421A9198889A900F6689D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		072421AB1988B80700F6689D /* Tap4FoodGenerateRestaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tap4FoodGenerateRestaurants.h; path = Model/Tap4FoodGenerateRestaurants.h; sourceTree = "<group>"; };
-		072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tap4FoodGenerateRestaurants.m; path = Model/Tap4FoodGenerateRestaurants.m; sourceTree = "<group>"; };
 		072AB9BD1989457900D6F706 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		074F1D6A198C154A0011DB63 /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
 		074F1D6B198C154A0011DB63 /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsViewController.m; sourceTree = "<group>"; };
@@ -136,6 +134,8 @@
 		074F1D84198C69350011DB63 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07650EBA1986CCCC002F1E5E /* RestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsViewController.h; sourceTree = "<group>"; };
 		07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsViewController.m; sourceTree = "<group>"; };
+		07E2C1E81995874100A9DB89 /* GeocodeLatAndLong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeocodeLatAndLong.h; path = Model/GeocodeLatAndLong.h; sourceTree = "<group>"; };
+		07E2C1E91995874100A9DB89 /* GeocodeLatAndLong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeocodeLatAndLong.m; path = Model/GeocodeLatAndLong.m; sourceTree = "<group>"; };
 		07FEA1651986C01C001234A0 /* Tap4Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tap4Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FEA1681986C01C001234A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07FEA16A1986C01C001234A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -263,8 +263,8 @@
 		072421AE1988BA6100F6689D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				072421AB1988B80700F6689D /* Tap4FoodGenerateRestaurants.h */,
-				072421AC1988B80700F6689D /* Tap4FoodGenerateRestaurants.m */,
+				07E2C1E81995874100A9DB89 /* GeocodeLatAndLong.h */,
+				07E2C1E91995874100A9DB89 /* GeocodeLatAndLong.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -484,10 +484,10 @@
 				07242193198882FA00F6689D /* NSString+URLEncoding.m in Sources */,
 				0724219E198882FA00F6689D /* OAProblem.m in Sources */,
 				072421A2198882FA00F6689D /* OATokenManager.m in Sources */,
+				07E2C1EA1995874100A9DB89 /* GeocodeLatAndLong.m in Sources */,
 				07242199198882FA00F6689D /* OAConsumer.m in Sources */,
 				07FEA1751986C01C001234A0 /* main.m in Sources */,
 				0724219F198882FA00F6689D /* OARequestParameter.m in Sources */,
-				072421AD1988B80700F6689D /* Tap4FoodGenerateRestaurants.m in Sources */,
 				07242198198882FA00F6689D /* OACall.m in Sources */,
 				07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */,
 				07FEA1791986C01C001234A0 /* Tap4FoodAppDelegate.m in Sources */,
