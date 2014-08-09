@@ -112,10 +112,10 @@
    
     //Adjust things on the storyboard here!
     self.errorLabel.hidden = YES;
-    self.restaurantAddress.enabled = NO;
     self.restaurantName.adjustsFontSizeToFitWidth = YES;
     self.restaurantName.minimumScaleFactor = 8/20;
     self.restaurantAddress.adjustsFontSizeToFitWidth = YES;
+    self.restaurantAddress.userInteractionEnabled = YES;
     self.phoneNumber.userInteractionEnabled = YES;
     self.phoneNumber.adjustsFontSizeToFitWidth = YES;
     self.distanceFromCurrent.adjustsFontSizeToFitWidth = YES;
@@ -215,19 +215,21 @@
             self.restaurantPicture.image = [UIImage imageWithData:imageData];
         }
         
+    //Everything regarding the phone number is here
         NSString *phoneNumber = [pickedRestaurant objectForKey:@"display_phone"];
         
-        NSMutableAttributedString *attributedPhoneNumber = [[NSMutableAttributedString alloc]initWithString:phoneNumber];
-        [attributedPhoneNumber addAttribute:NSForegroundColorAttributeName
-                                      value:[UIColor blueColor]
-                                      range:NSMakeRange(0, [attributedPhoneNumber length])];
-        [attributedPhoneNumber addAttribute:NSUnderlineStyleAttributeName
-                                      value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
-                                      range:NSMakeRange(0, [attributedPhoneNumber length])];
+        NSMutableAttributedString *attributedPhoneNumber = [self setupAttributedLinkString:phoneNumber];
         self.phoneNumber.attributedText = attributedPhoneNumber;
+        
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                    action:@selector(phoneCallRecognizer)];
+        [self.phoneNumber addGestureRecognizer:tapGesture];
 
+    //Set the restaurant name label
         self.restaurantName.text = [pickedRestaurant objectForKey:@"name"];
         
+        
+    //EVerything regarding the address is put in here
         NSDictionary *addressDictionary = [pickedRestaurant objectForKey:@"location"];
         NSArray *address = [addressDictionary objectForKey:@"display_address"];
         NSString *addressString = [[NSString alloc]init];
@@ -239,10 +241,16 @@
             }
         }
         
+        NSMutableAttributedString *attributedAddress = [self setupAttributedLinkString:addressString];
+        self.restaurantAddress.attributedText = attributedAddress;
         
-        restaurantDistance = [[pickedRestaurant objectForKey:@"distance"]doubleValue];
-        self.restaurantAddress.text = addressString;
+        UITapGestureRecognizer *tapForAddress = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                    action:@selector(openAddress)];
+        [self.restaurantAddress addGestureRecognizer:tapForAddress];
+        self.restaurantAddress.textAlignment = NSTextAlignmentCenter;
+
         
+    //Setup images for the restaurant
         NSURL *ratingImgURL;
         NSData *ratingImgData;
         if([pickedRestaurant objectForKey:@"rating_img_url"] == nil) {
@@ -258,6 +266,8 @@
             self.restaurantRating.image = [UIImage imageWithData:ratingImgData];
         }
         
+        restaurantDistance = [[pickedRestaurant objectForKey:@"distance"]doubleValue];
+        
         self.numberOfRatings.text = [NSString stringWithFormat:@"%i reviews", (int)[pickedRestaurant objectForKey:@"review_count"] ];
         
         self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
@@ -268,9 +278,7 @@
         [self.seeMoreOnYelpText setTitle:@"See more on" forState:UIControlStateNormal];
         
         NSLog(@"%@", [pickedRestaurant objectForKey:@"phone"]);
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                                    action:@selector(phoneCallRecognizer)];
-        [self.phoneNumber addGestureRecognizer:tapGesture];
+      
         self.distanceFromCurrent.text = [NSString stringWithFormat: @"%.2f miles",restaurantDistance* 0.00086763];
         
         self.phoneIcon.image = [UIImage imageNamed:@"phoneImage"];
@@ -360,7 +368,47 @@
                                                  green:87.0f/255.0f
                                                   blue:161.0f/255.0f
                                                  alpha:1.0f]];
+    
+}
+
+-(NSMutableAttributedString *)setupAttributedLinkString: (NSString *)string {
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string];
+    [attributedString addAttribute:NSForegroundColorAttributeName
+                              value:[UIColor blueColor]
+                              range:NSMakeRange(0, [attributedString length])];
+    [attributedString addAttribute:NSUnderlineStyleAttributeName
+                              value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
+                              range:NSMakeRange(0, [attributedString length])];
+    return attributedString;
+}
+
+-(void)openAddress {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Open in Maps" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Apple Maps",@"Google Maps", @"Copy Address", nil];
+    [sheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex==0) {
+        //Apple Maps
+        NSString* address = [NSString stringWithFormat:@"http://maps.apple.com/?q=%@", self.restaurantName.text];
+        NSURL* url = [[NSURL alloc] initWithString:[address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        [[UIApplication sharedApplication] openURL:url];
+    } else if (buttonIndex==1) {
+        //Google Maps
+        NSString *address = [NSString stringWithFormat: @"comgooglemaps://?q=%@+%@", self.restaurantAddress.text, self.restaurantName.text];
         
+        NSURL *url = [[NSURL alloc]initWithString:[address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+            //left as an exercise for the reader: open the Google Maps mobile website instead!
+        } else {
+             NSString *address = [NSString stringWithFormat: @"http://maps.google.com/maps?q=%@+%@", self.restaurantAddress.text, self.restaurantName.text];
+            NSURL *url = [[NSURL alloc]initWithString:[address stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } else if (buttonIndex == 2) {
+        [[UIPasteboard generalPasteboard] setString:self.restaurantAddress.text];
+    }
 }
 /*
 #pragma mark - Navigation
