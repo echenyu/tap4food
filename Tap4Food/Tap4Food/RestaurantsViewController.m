@@ -10,6 +10,7 @@
 #import "OAuthConsumer.h"
 #import <GHUnitIOS/GHUnit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "GeocodeLatAndLong.h"
 
 @interface RestaurantsViewController () {
     NSDictionary *resultsFromYelp;
@@ -36,6 +37,7 @@
 @property (nonatomic, strong)UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong)UIImage *restaurantImage;
 @property (nonatomic, strong)CLLocationManager *currentLocationManager;
+@property (nonatomic, strong)GeocodeLatAndLong *gc;
 
 @end
 
@@ -54,6 +56,13 @@
         _restaurantImage = [[UIImage alloc]init];
     }
     return _restaurantImage;
+}
+
+-(GeocodeLatAndLong *)gc {
+    if (!_gc) {
+        _gc = [[GeocodeLatAndLong alloc]init];
+    }
+    return _gc;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -78,13 +87,15 @@
     
     //Set things about the navigation controller here.
     self.title = @"Tap4Food";
+    
+    //Turns off the back navigation by swiping on the edge of the screen
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Zapfino" size:14], NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                           target:self
-                                                                                          action:@selector(pickRandomRestaurant)];
+                                                                                          action:@selector(setupRestaurants)];
 
    
     //Adjust things on the storyboard here!
@@ -97,8 +108,13 @@
     self.phoneNumber.adjustsFontSizeToFitWidth = YES;
     self.distanceFromCurrent.adjustsFontSizeToFitWidth = YES;
     [self.currentLocationManager startUpdatingLocation];
-    
+    [self.restaurantDescription sizeToFit];
     [self setupRestaurants];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(setLatAndLong)
+                                                name:@"t4fLatAndLongReceived"
+                                              object:nil];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -206,20 +222,6 @@
         }
     }
     
-    CLGeocoder *addressGeocoder = [[CLGeocoder alloc]init];
-    [addressGeocoder geocodeAddressString:addressString completionHandler:^(NSArray *placemarks, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            CLPlacemark *placeMark = [placemarks objectAtIndex:0];
-            CLLocation *location = placeMark.location;
-            CLLocationCoordinate2D coordinates = location.coordinate;
-            
-            restaurantLatitude = coordinates.latitude;
-            restaurantLongitude = coordinates.longitude;
-            NSLog(@"latitude: %f \n longitude: %f", restaurantLatitude, restaurantLongitude);
-            NSLog(@"%f, %f", restaurantLatitude, restaurantLongitude);
-            [self addMarker];
-        });
-    }];
     
     restaurantDistance = [[pickedRestaurant objectForKey:@"distance"]doubleValue];
     self.restaurantAddress.text = addressString;
@@ -246,8 +248,9 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(phoneCallRecognizer)];
     [self.phoneNumber addGestureRecognizer:tapGesture];
     self.distanceFromCurrent.text = [NSString stringWithFormat: @"Distance: %.2f miles",restaurantDistance* 0.00062137];
+    
     [self setupMap];
-
+    [self getLatAndLong:addressString];
 }
 
 -(void)setupMap {
@@ -260,8 +263,8 @@
     self.mapView.myLocationEnabled = YES;
     self.mapView.settings.compassButton = YES;
     self.mapView.settings.myLocationButton = YES;
-    
     [self.googleMap addSubview: self.mapView];
+    
 }
 
 -(void)addMarker {
@@ -269,6 +272,8 @@
     marker.position = CLLocationCoordinate2DMake(restaurantLatitude, restaurantLongitude);
     marker.appearAnimation = kGMSMarkerAnimationPop;
     marker.map = self.mapView;
+    NSLog(@"%f and %f", restaurantLatitude, restaurantLongitude);
+
 }
 
 
@@ -296,7 +301,20 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%i",phoneCallNumber]]];
 }
 
+-(void)getLatAndLong: (NSString *)addressString {
+    [[self gc] geocodeAddress:addressString];
+    
+}
 
+-(void)setLatAndLong {
+    NSString *gcRestaurantLat = [[[self gc] latAndLong]objectForKey:@"lat"];
+    NSString *gcRestaurantLong = [[[self gc] latAndLong]objectForKey:@"lng"];
+    restaurantLatitude = [gcRestaurantLat doubleValue];
+    restaurantLongitude = [gcRestaurantLong doubleValue];
+    NSLog(@"%f and %f", restaurantLatitude, restaurantLongitude);
+
+    [self addMarker];
+}
 /*
 #pragma mark - Navigation
 
