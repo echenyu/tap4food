@@ -20,7 +20,7 @@
                                 <rect key="frame" x="80" y="224" width="160" height="55"/>
                                 <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="24"/>
                                 <state key="normal" title="Tap4Food">
-                                    <color key="titleColor" red="0.22348312043795621" green="0.52794251824817517" blue="0.63137254901960782" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.19215686274509802" green="0.34509803921568627" blue="0.63137254901960782" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -79,13 +79,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exC-wM-Eeo">
-                                <rect key="frame" x="19" y="205" width="127" height="20"/>
-                                <attributedString key="attributedText"/>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exC-wM-Eeo">
+                                <rect key="frame" x="46" y="247" width="100" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncb-jg-TMw">
-                                <rect key="frame" x="19" y="234" width="127" height="21"/>
+                                <rect key="frame" x="46" y="209" width="100" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -107,6 +107,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gZ-In-w4v">
+                                <rect key="frame" x="19" y="207" width="19" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqi-zW-JvE">
+                                <rect key="frame" x="19" y="242" width="19" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -115,7 +123,9 @@
                         <outlet property="connectionErrorView" destination="WdM-W9-Vnf" id="6UM-7t-bzh"/>
                         <outlet property="distanceFromCurrent" destination="exC-wM-Eeo" id="RDq-kk-Aob"/>
                         <outlet property="googleMap" destination="FXX-tc-pIf" id="i0j-So-Jc5"/>
+                        <outlet property="locationIcon" destination="Nqi-zW-JvE" id="szS-yw-hsL"/>
                         <outlet property="numberOfRatings" destination="dxW-n4-Yp9" id="0H7-oM-6xp"/>
+                        <outlet property="phoneIcon" destination="2gZ-In-w4v" id="oT7-4g-WwK"/>
                         <outlet property="phoneNumber" destination="ncb-jg-TMw" id="dLQ-62-LXD"/>
                         <outlet property="restaurantAddress" destination="TSM-pZ-OXs" id="eQH-bb-yWY"/>
                         <outlet property="restaurantDescription" destination="UUJ-ow-WLb" id="05q-X4-KLS"/>
