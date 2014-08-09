@@ -30,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfRatings;
 @property (weak, nonatomic) IBOutlet UILabel *restaurantDescription;
 @property (weak, nonatomic) IBOutlet UILabel *distanceFromCurrent;
-@property (weak, nonatomic) IBOutlet UITextView *connectionErrorView;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *phoneIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *locationIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *yelpImage;
@@ -111,7 +111,7 @@
 
    
     //Adjust things on the storyboard here!
-    self.connectionErrorView.hidden = YES;
+    self.errorLabel.hidden = YES;
     self.restaurantAddress.enabled = NO;
     self.restaurantName.adjustsFontSizeToFitWidth = YES;
     self.restaurantName.minimumScaleFactor = 8/20;
@@ -178,9 +178,8 @@
             NSLog(@"ughhh error");
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.activityIndicator stopAnimating];
-                self.connectionErrorView.text = @"Connection Error! Try again or \n wait until you have a data connection";
-                self.connectionErrorView.hidden = NO;
-                self.navigationItem.rightBarButtonItem.enabled = NO;
+                self.errorLabel.text = @"Connection Error! Try again or \n wait until you have a data connection";
+                [self setupErrorLabel];
             });
 
         }
@@ -194,87 +193,92 @@
     int numberOfRestaurants = (int)[restaurantsFromYelp count];
     int randomRestaurantNumber = arc4random()%numberOfRestaurants;
     
-    NSDictionary *pickedRestaurant = [restaurantsFromYelp objectAtIndex:randomRestaurantNumber];
-    NSURL *imageUrl;
-    NSData *imageData;
-    
-    NSLog(@"%@", pickedRestaurant);
-    if([pickedRestaurant objectForKey:@"image_url"] == nil) {
-        imageUrl = [[NSURL alloc]init];
+    if(numberOfRestaurants == 0) {
+        self.errorLabel.text = @"No restaurants found nearby! Change the distance filter in settings";
+        [self setupErrorLabel];
     } else {
-        imageUrl = [[NSURL alloc]initWithString:[pickedRestaurant objectForKey:@"image_url"]];
-    }
-    
-    if(imageUrl == nil) {
-        imageData = [[NSData alloc]init];
-    } else {
-        imageData = [[NSData alloc]initWithContentsOfURL:imageUrl];
-        self.restaurantPicture.image = [UIImage imageWithData:imageData];
-    }
-    
-    NSString *phoneNumber = [pickedRestaurant objectForKey:@"display_phone"];
-    
-    NSMutableAttributedString *attributedPhoneNumber = [[NSMutableAttributedString alloc]initWithString:phoneNumber];
-    [attributedPhoneNumber addAttribute:NSForegroundColorAttributeName
-                                  value:[UIColor blueColor]
-                                  range:NSMakeRange(0, [attributedPhoneNumber length])];
-    [attributedPhoneNumber addAttribute:NSUnderlineStyleAttributeName
-                                  value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
-                                  range:NSMakeRange(0, [attributedPhoneNumber length])];
-    self.phoneNumber.attributedText = attributedPhoneNumber;
-
-    self.restaurantName.text = [pickedRestaurant objectForKey:@"name"];
-    
-    NSDictionary *addressDictionary = [pickedRestaurant objectForKey:@"location"];
-    NSArray *address = [addressDictionary objectForKey:@"display_address"];
-    NSString *addressString = [[NSString alloc]init];
-    
-    for (int i = 0; i < [address count]; i++) {
-        addressString = [addressString stringByAppendingString:[address objectAtIndex:i]];
-        if(i != [address count] - 1) {
-            addressString = [addressString stringByAppendingString:@", "];
+        NSDictionary *pickedRestaurant = [restaurantsFromYelp objectAtIndex:randomRestaurantNumber];
+        NSURL *imageUrl;
+        NSData *imageData;
+        
+        NSLog(@"%@", pickedRestaurant);
+        if([pickedRestaurant objectForKey:@"image_url"] == nil) {
+            imageUrl = [[NSURL alloc]init];
+        } else {
+            imageUrl = [[NSURL alloc]initWithString:[pickedRestaurant objectForKey:@"image_url"]];
         }
+        
+        if(imageUrl == nil) {
+            imageData = [[NSData alloc]init];
+        } else {
+            imageData = [[NSData alloc]initWithContentsOfURL:imageUrl];
+            self.restaurantPicture.image = [UIImage imageWithData:imageData];
+        }
+        
+        NSString *phoneNumber = [pickedRestaurant objectForKey:@"display_phone"];
+        
+        NSMutableAttributedString *attributedPhoneNumber = [[NSMutableAttributedString alloc]initWithString:phoneNumber];
+        [attributedPhoneNumber addAttribute:NSForegroundColorAttributeName
+                                      value:[UIColor blueColor]
+                                      range:NSMakeRange(0, [attributedPhoneNumber length])];
+        [attributedPhoneNumber addAttribute:NSUnderlineStyleAttributeName
+                                      value:[NSNumber numberWithInt:NSUnderlineStyleSingle]
+                                      range:NSMakeRange(0, [attributedPhoneNumber length])];
+        self.phoneNumber.attributedText = attributedPhoneNumber;
+
+        self.restaurantName.text = [pickedRestaurant objectForKey:@"name"];
+        
+        NSDictionary *addressDictionary = [pickedRestaurant objectForKey:@"location"];
+        NSArray *address = [addressDictionary objectForKey:@"display_address"];
+        NSString *addressString = [[NSString alloc]init];
+        
+        for (int i = 0; i < [address count]; i++) {
+            addressString = [addressString stringByAppendingString:[address objectAtIndex:i]];
+            if(i != [address count] - 1) {
+                addressString = [addressString stringByAppendingString:@", "];
+            }
+        }
+        
+        
+        restaurantDistance = [[pickedRestaurant objectForKey:@"distance"]doubleValue];
+        self.restaurantAddress.text = addressString;
+        
+        NSURL *ratingImgURL;
+        NSData *ratingImgData;
+        if([pickedRestaurant objectForKey:@"rating_img_url"] == nil) {
+            ratingImgURL = [[NSURL alloc]init];
+        } else {
+            ratingImgURL = [[NSURL alloc]initWithString:[pickedRestaurant objectForKey:@"rating_img_url"]];
+        }
+        
+        if(ratingImgURL == nil) {
+            ratingImgData = [[NSData alloc]init];
+        } else {
+            ratingImgData = [[NSData alloc]initWithContentsOfURL:ratingImgURL];
+            self.restaurantRating.image = [UIImage imageWithData:ratingImgData];
+        }
+        
+        self.numberOfRatings.text = [NSString stringWithFormat:@"%i reviews", (int)[pickedRestaurant objectForKey:@"review_count"] ];
+        
+        self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
+        
+        self.restaurantUrl = [pickedRestaurant objectForKey:@"url"];
+        
+        phoneCallNumber = [pickedRestaurant objectForKey:@"phone"];
+        [self.seeMoreOnYelpText setTitle:@"See more on" forState:UIControlStateNormal];
+        
+        NSLog(@"%@", [pickedRestaurant objectForKey:@"phone"]);
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                    action:@selector(phoneCallRecognizer)];
+        [self.phoneNumber addGestureRecognizer:tapGesture];
+        self.distanceFromCurrent.text = [NSString stringWithFormat: @"%.2f miles",restaurantDistance* 0.00086763];
+        
+        self.phoneIcon.image = [UIImage imageNamed:@"phoneImage"];
+        self.locationIcon.image = [UIImage imageNamed:@"Location"];
+        self.yelpImage.image = [UIImage imageNamed:@"yelpLogo"];
+        [self setupMap];
+        [self getLatAndLong:addressString];
     }
-    
-    
-    restaurantDistance = [[pickedRestaurant objectForKey:@"distance"]doubleValue];
-    self.restaurantAddress.text = addressString;
-    
-    NSURL *ratingImgURL;
-    NSData *ratingImgData;
-    if([pickedRestaurant objectForKey:@"rating_img_url"] == nil) {
-        ratingImgURL = [[NSURL alloc]init];
-    } else {
-        ratingImgURL = [[NSURL alloc]initWithString:[pickedRestaurant objectForKey:@"rating_img_url"]];
-    }
-    
-    if(ratingImgURL == nil) {
-        ratingImgData = [[NSData alloc]init];
-    } else {
-        ratingImgData = [[NSData alloc]initWithContentsOfURL:ratingImgURL];
-        self.restaurantRating.image = [UIImage imageWithData:ratingImgData];
-    }
-    
-    self.numberOfRatings.text = [NSString stringWithFormat:@"%i reviews", (int)[pickedRestaurant objectForKey:@"review_count"] ];
-    
-    self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
-    
-    self.restaurantUrl = [pickedRestaurant objectForKey:@"url"];
-    
-    phoneCallNumber = [pickedRestaurant objectForKey:@"phone"];
-    [self.seeMoreOnYelpText setTitle:@"See more on" forState:UIControlStateNormal];
-    
-    NSLog(@"%@", [pickedRestaurant objectForKey:@"phone"]);
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                                action:@selector(phoneCallRecognizer)];
-    [self.phoneNumber addGestureRecognizer:tapGesture];
-    self.distanceFromCurrent.text = [NSString stringWithFormat: @"%.2f miles",restaurantDistance* 0.00086763];
-    
-    self.phoneIcon.image = [UIImage imageNamed:@"phoneImage"];
-    self.locationIcon.image = [UIImage imageNamed:@"Location"];
-    self.yelpImage.image = [UIImage imageNamed:@"yelpLogo"];
-    [self setupMap];
-    [self getLatAndLong:addressString];
 }
 
 -(void)setupMap {
@@ -346,6 +350,17 @@
     if([[UIApplication sharedApplication]canOpenURL:restaurantURL]) {
         [[UIApplication sharedApplication]openURL:restaurantURL];
     }
+}
+
+-(void)setupErrorLabel {
+    self.errorLabel.hidden = NO;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    self.errorLabel.textAlignment = NSTextAlignmentCenter;
+    [self.errorLabel setTextColor:[UIColor colorWithRed:49.0f/255.0f
+                                                 green:87.0f/255.0f
+                                                  blue:161.0f/255.0f
+                                                 alpha:1.0f]];
+        
 }
 /*
 #pragma mark - Navigation
