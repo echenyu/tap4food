@@ -18,7 +18,7 @@
     double restaurantLongitude;
     double restaurantLatitude;
     double restaurantDistance;
-    int phoneCallNumber;
+    NSString* phoneCallNumber;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *googleMap;
@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *restaurantDescription;
 @property (weak, nonatomic) IBOutlet UILabel *distanceFromCurrent;
 @property (weak, nonatomic) IBOutlet UITextView *connectionErrorView;
+@property (weak, nonatomic) IBOutlet UIImageView *phoneIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *locationIcon;
 
 @property (strong,nonatomic)GMSMapView *mapView;
 @property (strong, nonatomic) NSNumber *numberOfMetersFilter;
@@ -95,7 +97,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Zapfino" size:14], NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                           target:self
-                                                                                          action:@selector(setupRestaurants)];
+                                                                                          action:@selector(pickRandomRestaurant)];
 
    
     //Adjust things on the storyboard here!
@@ -185,6 +187,7 @@
     NSURL *imageUrl;
     NSData *imageData;
     
+    NSLog(@"%@", pickedRestaurant);
     if([pickedRestaurant objectForKey:@"image_url"] == nil) {
         imageUrl = [[NSURL alloc]init];
     } else {
@@ -244,11 +247,15 @@
     self.numberOfRatings.text = [NSString stringWithFormat:@"%i reviews", (int)[pickedRestaurant objectForKey:@"review_count"] ];
     
     self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
-    phoneCallNumber = [[pickedRestaurant objectForKey:@"phone"]intValue];
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(phoneCallRecognizer)];
-    [self.phoneNumber addGestureRecognizer:tapGesture];
-    self.distanceFromCurrent.text = [NSString stringWithFormat: @"Distance: %.2f miles",restaurantDistance* 0.00062137];
     
+    phoneCallNumber = [pickedRestaurant objectForKey:@"phone"];
+    NSLog(@"%@", [pickedRestaurant objectForKey:@"phone"]);
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                action:@selector(phoneCallRecognizer)];
+    [self.phoneNumber addGestureRecognizer:tapGesture];
+    self.distanceFromCurrent.text = [NSString stringWithFormat: @"%.2f miles",restaurantDistance* 0.00062137];
+    self.phoneIcon.image = [UIImage imageNamed:@"phoneImage"];
+    self.locationIcon.image = [UIImage imageNamed:@"Location"];
     [self setupMap];
     [self getLatAndLong:addressString];
 }
@@ -298,7 +305,8 @@
 }
 
 -(void)phoneCallRecognizer {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%i",phoneCallNumber]]];
+    NSLog(@"%@", phoneCallNumber);
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneCallNumber]]];
 }
 
 -(void)getLatAndLong: (NSString *)addressString {
