@@ -170,6 +170,7 @@
                 [self.activityIndicator stopAnimating];
                 self.connectionErrorView.text = @"Connection Error! Try again or \n wait until you have a data connection";
                 self.connectionErrorView.hidden = NO;
+                self.navigationItem.rightBarButtonItem.enabled = NO;
             });
 
         }
