@@ -105,10 +105,9 @@
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Zapfino" size:14], NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                          target:self
-                                                                                          action:@selector(pickRandomRestaurant)];
-
+   
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"Tap4FoodBarButton"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style: UIBarButtonItemStylePlain target:self action:@selector(pickRandomRestaurant)];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
    
     //Adjust things on the storyboard here!
     self.errorLabel.hidden = YES;
@@ -268,7 +267,7 @@
         
         restaurantDistance = [[pickedRestaurant objectForKey:@"distance"]doubleValue];
         
-        self.numberOfRatings.text = [NSString stringWithFormat:@"%i reviews", (int)[pickedRestaurant objectForKey:@"review_count"] ];
+        self.numberOfRatings.text = [NSString stringWithFormat:@"%@ reviews", [pickedRestaurant objectForKey:@"review_count"] ];
         
         self.restaurantDescription.text = [pickedRestaurant objectForKey:@"snippet_text"];
         
@@ -335,7 +334,7 @@
 
 -(void)phoneCallRecognizer {
     NSLog(@"%@", phoneCallNumber);
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phoneCallNumber]]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phoneCallNumber]]];
 }
 
 -(void)getLatAndLong: (NSString *)addressString {

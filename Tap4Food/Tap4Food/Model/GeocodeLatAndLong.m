@@ -10,8 +10,6 @@
 
 @implementation GeocodeLatAndLong
 
-#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-
 -(id)init {
     self = [super init];
     self.latAndLong = [[NSDictionary alloc]initWithObjectsAndKeys:@"0.0", @"lat", @"0.0", @"long", nil];
@@ -24,7 +22,7 @@
     NSString* string = [url stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSURL *query = [NSURL URLWithString:string];
    
-    dispatch_async(kBgQueue, ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         NSData *data = [NSData dataWithContentsOfURL:query];
         [self fetchedData:data];
     });
