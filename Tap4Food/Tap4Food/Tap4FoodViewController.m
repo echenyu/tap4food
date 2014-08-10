@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.canDisplayBannerAds = YES;
 	// Do any additional setup after loading the view, typically from a nib.
     [self setup];
 
