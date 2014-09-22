@@ -586,6 +586,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PROVISIONING_PROFILE = "B613A5AB-1E14-4E0D-86E3-8772DA4550FB";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -622,6 +623,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PROVISIONING_PROFILE = "B613A5AB-1E14-4E0D-86E3-8772DA4550FB";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
