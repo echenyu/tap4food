@@ -8,7 +8,6 @@
 
 #import "RestaurantsViewController.h"
 #import "OAuthConsumer.h"
-#import <GHUnitIOS/GHUnit.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "GeocodeLatAndLong.h"
 

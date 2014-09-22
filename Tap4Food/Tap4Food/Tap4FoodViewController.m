@@ -8,7 +8,6 @@
 
 #import "Tap4FoodViewController.h"
 #import "OAuthConsumer.h"
-#import <YAJLiOS/YAJL.h>
 #import <GHUnitIOS/GHUnit.h>
 #import "RestaurantsViewController.h"
 
@@ -32,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.canDisplayBannerAds = YES;
 	// Do any additional setup after loading the view, typically from a nib.
     [self setup];
 

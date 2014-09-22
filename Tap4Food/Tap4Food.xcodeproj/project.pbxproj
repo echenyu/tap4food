@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		071A2DB41986E4BC00B00665 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 071A2DB31986E4BC00B00665 /* Security.framework */; };
 		071A2DB61986E4D200B00665 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 071A2DB51986E4D200B00665 /* libxml2.dylib */; };
-		0724212B1986FD0900F6689D /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0724212A1986FD0900F6689D /* GHUnitIOS.framework */; };
 		07242192198882FA00F6689D /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0724216E198882FA00F6689D /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07242193198882FA00F6689D /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 07242170198882FA00F6689D /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07242194198882FA00F6689D /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 07242172198882FA00F6689D /* NSURL+Base.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -47,6 +46,7 @@
 		074F1D83198C692E0011DB63 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074F1D82198C692E0011DB63 /* OpenGLES.framework */; };
 		074F1D85198C69350011DB63 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074F1D84198C69350011DB63 /* QuartzCore.framework */; };
 		07650EBC1986CCCC002F1E5E /* RestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */; };
+		07BCE6CB1997192200C0E89F /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BCE6CA1997192200C0E89F /* iAd.framework */; };
 		07E2C1EA1995874100A9DB89 /* GeocodeLatAndLong.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E2C1E91995874100A9DB89 /* GeocodeLatAndLong.m */; };
 		07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16A1986C01C001234A0 /* CoreGraphics.framework */; };
 		07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FEA16C1986C01C001234A0 /* UIKit.framework */; };
@@ -76,7 +76,6 @@
 /* Begin PBXFileReference section */
 		071A2DB31986E4BC00B00665 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		071A2DB51986E4D200B00665 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		0724212A1986FD0900F6689D /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../../../Downloads/GHUnitIOS.framework; sourceTree = "<group>"; };
 		0724216D198882FA00F6689D /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		0724216E198882FA00F6689D /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		0724216F198882FA00F6689D /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		074F1D84198C69350011DB63 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07650EBA1986CCCC002F1E5E /* RestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsViewController.h; sourceTree = "<group>"; };
 		07650EBB1986CCCC002F1E5E /* RestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsViewController.m; sourceTree = "<group>"; };
+		07BCE6CA1997192200C0E89F /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		07E2C1E81995874100A9DB89 /* GeocodeLatAndLong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeocodeLatAndLong.h; path = Model/GeocodeLatAndLong.h; sourceTree = "<group>"; };
 		07E2C1E91995874100A9DB89 /* GeocodeLatAndLong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeocodeLatAndLong.m; path = Model/GeocodeLatAndLong.m; sourceTree = "<group>"; };
 		07FEA1651986C01C001234A0 /* Tap4Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tap4Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BCE6CB1997192200C0E89F /* iAd.framework in Frameworks */,
 				074F1D85198C69350011DB63 /* QuartzCore.framework in Frameworks */,
 				074F1D83198C692E0011DB63 /* OpenGLES.framework in Frameworks */,
 				074F1D81198C69250011DB63 /* libz.dylib in Frameworks */,
@@ -181,7 +182,6 @@
 				074F1D6E198C68240011DB63 /* GoogleMaps.framework in Frameworks */,
 				071A2DB61986E4D200B00665 /* libxml2.dylib in Frameworks */,
 				071A2DB41986E4BC00B00665 /* Security.framework in Frameworks */,
-				0724212B1986FD0900F6689D /* GHUnitIOS.framework in Frameworks */,
 				07FEA16B1986C01C001234A0 /* CoreGraphics.framework in Frameworks */,
 				07FEA16D1986C01C001234A0 /* UIKit.framework in Frameworks */,
 			);
@@ -300,6 +300,7 @@
 		07FEA1671986C01C001234A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07BCE6CA1997192200C0E89F /* iAd.framework */,
 				074F1D84198C69350011DB63 /* QuartzCore.framework */,
 				074F1D82198C692E0011DB63 /* OpenGLES.framework */,
 				074F1D80198C69250011DB63 /* libz.dylib */,
@@ -317,7 +318,6 @@
 				072421A7198889A000F6689D /* SystemConfiguration.framework */,
 				072421A51988898D00F6689D /* MobileCoreServices.framework */,
 				072421A31988895D00F6689D /* CFNetwork.framework */,
-				0724212A1986FD0900F6689D /* GHUnitIOS.framework */,
 				071A2DB51986E4D200B00665 /* libxml2.dylib */,
 				071A2DB31986E4BC00B00665 /* Security.framework */,
 				07FEA1681986C01C001234A0 /* Foundation.framework */,
@@ -632,19 +632,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Yu (E94RS852RN)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Eric Yu (8K49CS2YDY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eric Yu (8K49CS2YDY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
-					"$(SDKROOT)/../../../../../../../../../Users/Eric/Documents/Developer/Objective",
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks/YAJL.framework/Headers",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks/GHUnit.framework",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
 					/Users/Eric/Downloads,
 					"$(PROJECT_DIR)",
 				);
@@ -656,17 +647,14 @@
 					"$SDKROOT/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "Tap4Food/Tap4Food-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/Eric/Downloads/Twitter-OAuth-iPhone-master/Twitter+OAuth/Libraries",
-					"&",
-					Headers,
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9EAD5359-A2CD-4527-B17A-24B722FA87A9";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -679,16 +667,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Eric Yu (8K49CS2YDY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
-					"$(SDKROOT)/../../../../../../../../../Users/Eric/Documents/Developer/Objective",
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks/YAJL.framework/Headers",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks/GHUnit.framework",
-					/Users/Eric/Documents/Developer/Objective,
-					"C/yelp-api/v2/ios/YelpAPI/Frameworks",
 					/Users/Eric/Downloads,
 					"$(PROJECT_DIR)",
 				);
@@ -700,17 +678,13 @@
 					"$SDKROOT/usr/include/libxml2/**",
 				);
 				INFOPLIST_FILE = "Tap4Food/Tap4Food-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/Eric/Downloads/Twitter-OAuth-iPhone-master/Twitter+OAuth/Libraries",
-					"&",
-					Headers,
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9EAD5359-A2CD-4527-B17A-24B722FA87A9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

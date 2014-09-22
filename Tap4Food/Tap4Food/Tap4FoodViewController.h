@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <iAd/iAd.h>
+
 
 
 @interface Tap4FoodViewController : UIViewController <CLLocationManagerDelegate>
