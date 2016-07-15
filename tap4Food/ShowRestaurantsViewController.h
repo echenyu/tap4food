@@ -10,4 +10,7 @@
 
 @interface ShowRestaurantsViewController : UIViewController
 
+@property float longitude;
+@property float latitude;
+
 @end
