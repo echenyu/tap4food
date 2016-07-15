@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TapScreenViewController.h
 //  tap4Food
 //
 //  Created by Eric Yu on 7/15/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TapScreenViewController : UIViewController
 
 @end
-

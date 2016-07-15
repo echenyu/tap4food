@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		0776DB291D394D1500FC2CF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB281D394D1500FC2CF1 /* main.m */; };
 		0776DB2C1D394D1500FC2CF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */; };
-		0776DB2F1D394D1500FC2CF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB2E1D394D1500FC2CF1 /* ViewController.m */; };
 		0776DB321D394D1500FC2CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB301D394D1500FC2CF1 /* Main.storyboard */; };
 		0776DB341D394D1500FC2CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB331D394D1500FC2CF1 /* Assets.xcassets */; };
 		0776DB371D394D1500FC2CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB351D394D1500FC2CF1 /* LaunchScreen.storyboard */; };
 		0776DB421D394D1500FC2CF1 /* tap4FoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB411D394D1500FC2CF1 /* tap4FoodTests.m */; };
 		0776DB4D1D394D1500FC2CF1 /* tap4FoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB4C1D394D1500FC2CF1 /* tap4FoodUITests.m */; };
+		0776DB5D1D394E7100FC2CF1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB5C1D394E7100FC2CF1 /* Images.xcassets */; };
+		0776DB601D394ED900FC2CF1 /* ShowRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB5F1D394ED900FC2CF1 /* ShowRestaurantsViewController.m */; };
+		0776DB631D394F4900FC2CF1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB621D394F4900FC2CF1 /* SettingsViewController.m */; };
+		0776DB661D394FE000FC2CF1 /* TapScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB651D394FE000FC2CF1 /* TapScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,6 @@
 		0776DB281D394D1500FC2CF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0776DB2A1D394D1500FC2CF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0776DB2D1D394D1500FC2CF1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0776DB2E1D394D1500FC2CF1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0776DB311D394D1500FC2CF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0776DB331D394D1500FC2CF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0776DB361D394D1500FC2CF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,13 @@
 		0776DB481D394D1500FC2CF1 /* tap4FoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tap4FoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0776DB4C1D394D1500FC2CF1 /* tap4FoodUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tap4FoodUITests.m; sourceTree = "<group>"; };
 		0776DB4E1D394D1500FC2CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0776DB5C1D394E7100FC2CF1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0776DB5E1D394ED900FC2CF1 /* ShowRestaurantsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowRestaurantsViewController.h; sourceTree = "<group>"; };
+		0776DB5F1D394ED900FC2CF1 /* ShowRestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowRestaurantsViewController.m; sourceTree = "<group>"; };
+		0776DB611D394F4900FC2CF1 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		0776DB621D394F4900FC2CF1 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		0776DB641D394FE000FC2CF1 /* TapScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapScreenViewController.h; sourceTree = "<group>"; };
+		0776DB651D394FE000FC2CF1 /* TapScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +111,15 @@
 			children = (
 				0776DB2A1D394D1500FC2CF1 /* AppDelegate.h */,
 				0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */,
-				0776DB2D1D394D1500FC2CF1 /* ViewController.h */,
-				0776DB2E1D394D1500FC2CF1 /* ViewController.m */,
 				0776DB301D394D1500FC2CF1 /* Main.storyboard */,
+				0776DB611D394F4900FC2CF1 /* SettingsViewController.h */,
+				0776DB621D394F4900FC2CF1 /* SettingsViewController.m */,
+				0776DB5E1D394ED900FC2CF1 /* ShowRestaurantsViewController.h */,
+				0776DB641D394FE000FC2CF1 /* TapScreenViewController.h */,
+				0776DB651D394FE000FC2CF1 /* TapScreenViewController.m */,
+				0776DB5F1D394ED900FC2CF1 /* ShowRestaurantsViewController.m */,
 				0776DB331D394D1500FC2CF1 /* Assets.xcassets */,
+				0776DB5C1D394E7100FC2CF1 /* Images.xcassets */,
 				0776DB351D394D1500FC2CF1 /* LaunchScreen.storyboard */,
 				0776DB381D394D1500FC2CF1 /* Info.plist */,
 				0776DB271D394D1500FC2CF1 /* Supporting Files */,
@@ -244,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0776DB371D394D1500FC2CF1 /* LaunchScreen.storyboard in Resources */,
+				0776DB5D1D394E7100FC2CF1 /* Images.xcassets in Resources */,
 				0776DB341D394D1500FC2CF1 /* Assets.xcassets in Resources */,
 				0776DB321D394D1500FC2CF1 /* Main.storyboard in Resources */,
 			);
@@ -270,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0776DB2F1D394D1500FC2CF1 /* ViewController.m in Sources */,
+				0776DB661D394FE000FC2CF1 /* TapScreenViewController.m in Sources */,
 				0776DB2C1D394D1500FC2CF1 /* AppDelegate.m in Sources */,
+				0776DB601D394ED900FC2CF1 /* ShowRestaurantsViewController.m in Sources */,
 				0776DB291D394D1500FC2CF1 /* main.m in Sources */,
+				0776DB631D394F4900FC2CF1 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
