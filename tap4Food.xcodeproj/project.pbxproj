@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0776DB291D394D1500FC2CF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB281D394D1500FC2CF1 /* main.m */; };
+		0776DB2C1D394D1500FC2CF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */; };
+		0776DB2F1D394D1500FC2CF1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB2E1D394D1500FC2CF1 /* ViewController.m */; };
+		0776DB321D394D1500FC2CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB301D394D1500FC2CF1 /* Main.storyboard */; };
+		0776DB341D394D1500FC2CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB331D394D1500FC2CF1 /* Assets.xcassets */; };
+		0776DB371D394D1500FC2CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB351D394D1500FC2CF1 /* LaunchScreen.storyboard */; };
+		0776DB421D394D1500FC2CF1 /* tap4FoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB411D394D1500FC2CF1 /* tap4FoodTests.m */; };
+		0776DB4D1D394D1500FC2CF1 /* tap4FoodUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB4C1D394D1500FC2CF1 /* tap4FoodUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0776DB3E1D394D1500FC2CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0776DB1C1D394D1500FC2CF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0776DB231D394D1500FC2CF1;
+			remoteInfo = tap4Food;
+		};
+		0776DB491D394D1500FC2CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0776DB1C1D394D1500FC2CF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0776DB231D394D1500FC2CF1;
+			remoteInfo = tap4Food;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0776DB241D394D1500FC2CF1 /* tap4Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tap4Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0776DB281D394D1500FC2CF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0776DB2A1D394D1500FC2CF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0776DB2D1D394D1500FC2CF1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0776DB2E1D394D1500FC2CF1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0776DB311D394D1500FC2CF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0776DB331D394D1500FC2CF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0776DB361D394D1500FC2CF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0776DB381D394D1500FC2CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0776DB3D1D394D1500FC2CF1 /* tap4FoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tap4FoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0776DB411D394D1500FC2CF1 /* tap4FoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tap4FoodTests.m; sourceTree = "<group>"; };
+		0776DB431D394D1500FC2CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0776DB481D394D1500FC2CF1 /* tap4FoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tap4FoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0776DB4C1D394D1500FC2CF1 /* tap4FoodUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tap4FoodUITests.m; sourceTree = "<group>"; };
+		0776DB4E1D394D1500FC2CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0776DB211D394D1500FC2CF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0776DB3A1D394D1500FC2CF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0776DB451D394D1500FC2CF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0776DB1B1D394D1500FC2CF1 = {
+			isa = PBXGroup;
+			children = (
+				0776DB261D394D1500FC2CF1 /* tap4Food */,
+				0776DB401D394D1500FC2CF1 /* tap4FoodTests */,
+				0776DB4B1D394D1500FC2CF1 /* tap4FoodUITests */,
+				0776DB251D394D1500FC2CF1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0776DB251D394D1500FC2CF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0776DB241D394D1500FC2CF1 /* tap4Food.app */,
+				0776DB3D1D394D1500FC2CF1 /* tap4FoodTests.xctest */,
+				0776DB481D394D1500FC2CF1 /* tap4FoodUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0776DB261D394D1500FC2CF1 /* tap4Food */ = {
+			isa = PBXGroup;
+			children = (
+				0776DB2A1D394D1500FC2CF1 /* AppDelegate.h */,
+				0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */,
+				0776DB2D1D394D1500FC2CF1 /* ViewController.h */,
+				0776DB2E1D394D1500FC2CF1 /* ViewController.m */,
+				0776DB301D394D1500FC2CF1 /* Main.storyboard */,
+				0776DB331D394D1500FC2CF1 /* Assets.xcassets */,
+				0776DB351D394D1500FC2CF1 /* LaunchScreen.storyboard */,
+				0776DB381D394D1500FC2CF1 /* Info.plist */,
+				0776DB271D394D1500FC2CF1 /* Supporting Files */,
+			);
+			path = tap4Food;
+			sourceTree = "<group>";
+		};
+		0776DB271D394D1500FC2CF1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0776DB281D394D1500FC2CF1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0776DB401D394D1500FC2CF1 /* tap4FoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				0776DB411D394D1500FC2CF1 /* tap4FoodTests.m */,
+				0776DB431D394D1500FC2CF1 /* Info.plist */,
+			);
+			path = tap4FoodTests;
+			sourceTree = "<group>";
+		};
+		0776DB4B1D394D1500FC2CF1 /* tap4FoodUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0776DB4C1D394D1500FC2CF1 /* tap4FoodUITests.m */,
+				0776DB4E1D394D1500FC2CF1 /* Info.plist */,
+			);
+			path = tap4FoodUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0776DB231D394D1500FC2CF1 /* tap4Food */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0776DB511D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4Food" */;
+			buildPhases = (
+				0776DB201D394D1500FC2CF1 /* Sources */,
+				0776DB211D394D1500FC2CF1 /* Frameworks */,
+				0776DB221D394D1500FC2CF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tap4Food;
+			productName = tap4Food;
+			productReference = 0776DB241D394D1500FC2CF1 /* tap4Food.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0776DB3C1D394D1500FC2CF1 /* tap4FoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0776DB541D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodTests" */;
+			buildPhases = (
+				0776DB391D394D1500FC2CF1 /* Sources */,
+				0776DB3A1D394D1500FC2CF1 /* Frameworks */,
+				0776DB3B1D394D1500FC2CF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0776DB3F1D394D1500FC2CF1 /* PBXTargetDependency */,
+			);
+			name = tap4FoodTests;
+			productName = tap4FoodTests;
+			productReference = 0776DB3D1D394D1500FC2CF1 /* tap4FoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0776DB471D394D1500FC2CF1 /* tap4FoodUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0776DB571D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodUITests" */;
+			buildPhases = (
+				0776DB441D394D1500FC2CF1 /* Sources */,
+				0776DB451D394D1500FC2CF1 /* Frameworks */,
+				0776DB461D394D1500FC2CF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0776DB4A1D394D1500FC2CF1 /* PBXTargetDependency */,
+			);
+			name = tap4FoodUITests;
+			productName = tap4FoodUITests;
+			productReference = 0776DB481D394D1500FC2CF1 /* tap4FoodUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0776DB1C1D394D1500FC2CF1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ericYu;
+				TargetAttributes = {
+					0776DB231D394D1500FC2CF1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					0776DB3C1D394D1500FC2CF1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0776DB231D394D1500FC2CF1;
+					};
+					0776DB471D394D1500FC2CF1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0776DB231D394D1500FC2CF1;
+					};
+				};
+			};
+			buildConfigurationList = 0776DB1F1D394D1500FC2CF1 /* Build configuration list for PBXProject "tap4Food" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0776DB1B1D394D1500FC2CF1;
+			productRefGroup = 0776DB251D394D1500FC2CF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0776DB231D394D1500FC2CF1 /* tap4Food */,
+				0776DB3C1D394D1500FC2CF1 /* tap4FoodTests */,
+				0776DB471D394D1500FC2CF1 /* tap4FoodUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0776DB221D394D1500FC2CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0776DB371D394D1500FC2CF1 /* LaunchScreen.storyboard in Resources */,
+				0776DB341D394D1500FC2CF1 /* Assets.xcassets in Resources */,
+				0776DB321D394D1500FC2CF1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0776DB3B1D394D1500FC2CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0776DB461D394D1500FC2CF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0776DB201D394D1500FC2CF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0776DB2F1D394D1500FC2CF1 /* ViewController.m in Sources */,
+				0776DB2C1D394D1500FC2CF1 /* AppDelegate.m in Sources */,
+				0776DB291D394D1500FC2CF1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0776DB391D394D1500FC2CF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0776DB421D394D1500FC2CF1 /* tap4FoodTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0776DB441D394D1500FC2CF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0776DB4D1D394D1500FC2CF1 /* tap4FoodUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0776DB3F1D394D1500FC2CF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0776DB231D394D1500FC2CF1 /* tap4Food */;
+			targetProxy = 0776DB3E1D394D1500FC2CF1 /* PBXContainerItemProxy */;
+		};
+		0776DB4A1D394D1500FC2CF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0776DB231D394D1500FC2CF1 /* tap4Food */;
+			targetProxy = 0776DB491D394D1500FC2CF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0776DB301D394D1500FC2CF1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0776DB311D394D1500FC2CF1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0776DB351D394D1500FC2CF1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0776DB361D394D1500FC2CF1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0776DB4F1D394D1500FC2CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0776DB501D394D1500FC2CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0776DB521D394D1500FC2CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = tap4Food/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EricYuApps.tap4Food;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0776DB531D394D1500FC2CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = tap4Food/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EricYuApps.tap4Food;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0776DB551D394D1500FC2CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = tap4FoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EricYuApps.tap4FoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tap4Food.app/tap4Food";
+			};
+			name = Debug;
+		};
+		0776DB561D394D1500FC2CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = tap4FoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EricYuApps.tap4FoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tap4Food.app/tap4Food";
+			};
+			name = Release;
+		};
+		0776DB581D394D1500FC2CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = tap4FoodUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EricYuApps.tap4FoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = tap4Food;
+			};
+			name = Debug;
+		};
+		0776DB591D394D1500FC2CF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = tap4FoodUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = EricYuApps.tap4FoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = tap4Food;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0776DB1F1D394D1500FC2CF1 /* Build configuration list for PBXProject "tap4Food" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0776DB4F1D394D1500FC2CF1 /* Debug */,
+				0776DB501D394D1500FC2CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0776DB511D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4Food" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0776DB521D394D1500FC2CF1 /* Debug */,
+				0776DB531D394D1500FC2CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0776DB541D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0776DB551D394D1500FC2CF1 /* Debug */,
+				0776DB561D394D1500FC2CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0776DB571D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0776DB581D394D1500FC2CF1 /* Debug */,
+				0776DB591D394D1500FC2CF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0776DB1C1D394D1500FC2CF1 /* Project object */;
+}
