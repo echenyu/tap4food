@@ -8,20 +8,34 @@
 
 #import "ShowRestaurantsViewController.h"
 
-@interface ShowRestaurantsViewController ()
-
+@interface ShowRestaurantsViewController () {
+    UIActivityIndicatorView *activityIndicator;
+}
 @end
+
+
 
 @implementation ShowRestaurantsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [activityIndicator startAnimating];
+    [self.view addSubview:activityIndicator];
+
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(UIActivityIndicatorView *)activityIndicator {
+    if(!activityIndicator) {
+        activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        activityIndicator.center = CGPointMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0);
+    }
+    return activityIndicator;
 }
 
 /*
