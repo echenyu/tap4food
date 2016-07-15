@@ -38,7 +38,6 @@ static NSString *const YELP_BASE_URL = @"https://api.yelp.com/v2/search?term=foo
             NSArray *businesses = [jsonDictionary objectForKey:@"businesses"];            
             jsonArrayFromYelp = businesses;
             [self setupRestaurantsArray];
-            Restaurant *randomRestaurant = [self pickRandomRestaurant]; 
             _dataLoaded = YES;
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{

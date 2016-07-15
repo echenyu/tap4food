@@ -7,11 +7,17 @@
 //
 
 #import "ShowRestaurantsViewController.h"
+#import "RestaurantCollection.h"
+#import "Restaurant.h"
 
 @interface ShowRestaurantsViewController () {
     UIActivityIndicatorView *activityIndicator;
+    Restaurant *randomRestaurant;
 }
 @end
+
+//View Elements
+
 
 
 
@@ -19,15 +25,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [activityIndicator startAnimating];
-    [self.view addSubview:activityIndicator];
-
+    
     // Do any additional setup after loading the view.
+    [self setupPage];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) setupPage {
+    [self setupActivityIndicator];
+//    [self setupRestaurants];
+}
+
+-(void) setupActivityIndicator {
+    [self.view addSubview:activityIndicator];
+    [activityIndicator startAnimating];
+}
+
+-(void) setupRestaurants {
+    RestaurantCollection *newCollection = [[RestaurantCollection alloc]init];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [newCollection setupRestaurantsWith:_latitude and:_longitude];
+
+        //Keep looping until dataLoaded is YES
+        while([newCollection dataLoaded] == NO) {}
+        randomRestaurant = [newCollection pickRandomRestaurant];
+        [self setupView];
+    });
+}
+
+-(void) setupView {
+    
 }
 
 -(UIActivityIndicatorView *)activityIndicator {

@@ -37,6 +37,10 @@
 }
 
 
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -46,9 +50,10 @@
     if([[segue identifier] isEqualToString:@"tap4FoodSegue"]) {
         float latitude = self.locationManager.location.coordinate.latitude;
         float longitude = self.locationManager.location.coordinate.longitude;
+
         ShowRestaurantsViewController *srViewController = [segue destinationViewController];
         srViewController.longitude = longitude;
-        srViewController.latitude = latitude; 
+        srViewController.latitude = latitude;
     }
     if([[segue identifier] isEqualToString:@"settingsSeque"]) {
         //Do nothing for the settings segue

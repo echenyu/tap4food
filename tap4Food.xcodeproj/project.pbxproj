@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071607361D3988990015FE67 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716070E1D3988990015FE67 /* NSMutableURLRequest+Parameters.m */; };
+		071607371D3988990015FE67 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607101D3988990015FE67 /* NSString+URLEncoding.m */; };
+		071607381D3988990015FE67 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607121D3988990015FE67 /* NSURL+Base.m */; };
+		071607391D3988990015FE67 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 071607141D3988990015FE67 /* Base64Transcoder.c */; };
+		0716073A1D3988990015FE67 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 071607161D3988990015FE67 /* hmac.c */; };
+		0716073B1D3988990015FE67 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 071607181D3988990015FE67 /* sha1.c */; };
+		0716073C1D3988990015FE67 /* OAAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716071B1D3988990015FE67 /* OAAttachment.m */; };
+		0716073D1D3988990015FE67 /* OACall.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716071D1D3988990015FE67 /* OACall.m */; };
+		0716073E1D3988990015FE67 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716071F1D3988990015FE67 /* OAConsumer.m */; };
+		0716073F1D3988990015FE67 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607211D3988990015FE67 /* OADataFetcher.m */; };
+		071607401D3988990015FE67 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607231D3988990015FE67 /* OAHMAC_SHA1SignatureProvider.m */; };
+		071607411D3988990015FE67 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607251D3988990015FE67 /* OAMutableURLRequest.m */; };
+		071607421D3988990015FE67 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607271D3988990015FE67 /* OAPlaintextSignatureProvider.m */; };
+		071607431D3988990015FE67 /* OAProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607291D3988990015FE67 /* OAProblem.m */; };
+		071607441D3988990015FE67 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716072B1D3988990015FE67 /* OARequestParameter.m */; };
+		071607451D3988990015FE67 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0716072D1D3988990015FE67 /* OAServiceTicket.m */; };
+		071607461D3988990015FE67 /* OATestServer.rb in Resources */ = {isa = PBXBuildFile; fileRef = 0716072F1D3988990015FE67 /* OATestServer.rb */; };
+		071607471D3988990015FE67 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607311D3988990015FE67 /* OAToken.m */; };
+		071607481D3988990015FE67 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 071607331D3988990015FE67 /* OATokenManager.m */; };
+		071607491D3988990015FE67 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 071607351D3988990015FE67 /* README */; };
+		0716074B1D3989530015FE67 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0716074A1D3989530015FE67 /* Security.framework */; };
 		0776DB291D394D1500FC2CF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB281D394D1500FC2CF1 /* main.m */; };
 		0776DB2C1D394D1500FC2CF1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */; };
 		0776DB321D394D1500FC2CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0776DB301D394D1500FC2CF1 /* Main.storyboard */; };
@@ -18,6 +39,11 @@
 		0776DB601D394ED900FC2CF1 /* ShowRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB5F1D394ED900FC2CF1 /* ShowRestaurantsViewController.m */; };
 		0776DB631D394F4900FC2CF1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB621D394F4900FC2CF1 /* SettingsViewController.m */; };
 		0776DB661D394FE000FC2CF1 /* TapScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB651D394FE000FC2CF1 /* TapScreenViewController.m */; };
+		0776DB691D39610D00FC2CF1 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB681D39610D00FC2CF1 /* Restaurant.m */; };
+		0776DB6D1D39650900FC2CF1 /* RestaurantCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0776DB6C1D39650900FC2CF1 /* RestaurantCollection.m */; };
+		408CCC31F93C7FFCCEA26C70 /* libPods-tap4FoodUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8774FA4EDE741A31AE42825C /* libPods-tap4FoodUITests.a */; };
+		CB239D649F9B7350BAC89C66 /* libPods-tap4Food.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8161B44C553E092D683E534 /* libPods-tap4Food.a */; };
+		EAF607CAEDED23A292423EA5 /* libPods-tap4FoodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 402E97E1B6555A89C66E3574 /* libPods-tap4FoodTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +64,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0716070D1D3988990015FE67 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
+		0716070E1D3988990015FE67 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		0716070F1D3988990015FE67 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		071607101D3988990015FE67 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		071607111D3988990015FE67 /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Base.h"; sourceTree = "<group>"; };
+		071607121D3988990015FE67 /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Base.m"; sourceTree = "<group>"; };
+		071607141D3988990015FE67 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		071607151D3988990015FE67 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		071607161D3988990015FE67 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		071607171D3988990015FE67 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		071607181D3988990015FE67 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		071607191D3988990015FE67 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		0716071A1D3988990015FE67 /* OAAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAAttachment.h; sourceTree = "<group>"; };
+		0716071B1D3988990015FE67 /* OAAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAAttachment.m; sourceTree = "<group>"; };
+		0716071C1D3988990015FE67 /* OACall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OACall.h; sourceTree = "<group>"; };
+		0716071D1D3988990015FE67 /* OACall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OACall.m; sourceTree = "<group>"; };
+		0716071E1D3988990015FE67 /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAConsumer.h; sourceTree = "<group>"; };
+		0716071F1D3988990015FE67 /* OAConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAConsumer.m; sourceTree = "<group>"; };
+		071607201D3988990015FE67 /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OADataFetcher.h; sourceTree = "<group>"; };
+		071607211D3988990015FE67 /* OADataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OADataFetcher.m; sourceTree = "<group>"; };
+		071607221D3988990015FE67 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
+		071607231D3988990015FE67 /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
+		071607241D3988990015FE67 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAMutableURLRequest.h; sourceTree = "<group>"; };
+		071607251D3988990015FE67 /* OAMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAMutableURLRequest.m; sourceTree = "<group>"; };
+		071607261D3988990015FE67 /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
+		071607271D3988990015FE67 /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
+		071607281D3988990015FE67 /* OAProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAProblem.h; sourceTree = "<group>"; };
+		071607291D3988990015FE67 /* OAProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAProblem.m; sourceTree = "<group>"; };
+		0716072A1D3988990015FE67 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OARequestParameter.h; sourceTree = "<group>"; };
+		0716072B1D3988990015FE67 /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OARequestParameter.m; sourceTree = "<group>"; };
+		0716072C1D3988990015FE67 /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAServiceTicket.h; sourceTree = "<group>"; };
+		0716072D1D3988990015FE67 /* OAServiceTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAServiceTicket.m; sourceTree = "<group>"; };
+		0716072E1D3988990015FE67 /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OASignatureProviding.h; sourceTree = "<group>"; };
+		0716072F1D3988990015FE67 /* OATestServer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = OATestServer.rb; sourceTree = "<group>"; };
+		071607301D3988990015FE67 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken.h; sourceTree = "<group>"; };
+		071607311D3988990015FE67 /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken.m; sourceTree = "<group>"; };
+		071607321D3988990015FE67 /* OATokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OATokenManager.h; sourceTree = "<group>"; };
+		071607331D3988990015FE67 /* OATokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATokenManager.m; sourceTree = "<group>"; };
+		071607341D3988990015FE67 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
+		071607351D3988990015FE67 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		0716074A1D3989530015FE67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0776DB241D394D1500FC2CF1 /* tap4Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tap4Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0776DB281D394D1500FC2CF1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0776DB2A1D394D1500FC2CF1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,6 +126,19 @@
 		0776DB621D394F4900FC2CF1 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		0776DB641D394FE000FC2CF1 /* TapScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapScreenViewController.h; sourceTree = "<group>"; };
 		0776DB651D394FE000FC2CF1 /* TapScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapScreenViewController.m; sourceTree = "<group>"; };
+		0776DB671D39610D00FC2CF1 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		0776DB681D39610D00FC2CF1 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		0776DB6B1D39650900FC2CF1 /* RestaurantCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantCollection.h; sourceTree = "<group>"; };
+		0776DB6C1D39650900FC2CF1 /* RestaurantCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantCollection.m; sourceTree = "<group>"; };
+		1B82A8390662E7F3B37580B3 /* Pods-tap4FoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tap4FoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tap4FoodTests/Pods-tap4FoodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		402E97E1B6555A89C66E3574 /* libPods-tap4FoodTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4FoodTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		691740E2B019D110D62D12B9 /* Pods-tap4Food.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tap4Food.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tap4Food/Pods-tap4Food.debug.xcconfig"; sourceTree = "<group>"; };
+		8774FA4EDE741A31AE42825C /* libPods-tap4FoodUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4FoodUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC91B3220F6BEADC24E7976 /* Pods-tap4FoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tap4FoodUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tap4FoodUITests/Pods-tap4FoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCF4F3BEF43C660611EDD176 /* Pods-tap4FoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tap4FoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tap4FoodTests/Pods-tap4FoodTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8161B44C553E092D683E534 /* libPods-tap4Food.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4Food.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4DDA4915023A918624A81EE /* Pods-tap4Food.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tap4Food.release.xcconfig"; path = "Pods/Target Support Files/Pods-tap4Food/Pods-tap4Food.release.xcconfig"; sourceTree = "<group>"; };
+		FA225D6D69E9527DDC06D6A3 /* Pods-tap4FoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tap4FoodUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tap4FoodUITests/Pods-tap4FoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +146,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0716074B1D3989530015FE67 /* Security.framework in Frameworks */,
+				CB239D649F9B7350BAC89C66 /* libPods-tap4Food.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF607CAEDED23A292423EA5 /* libPods-tap4FoodTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +163,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408CCC31F93C7FFCCEA26C70 /* libPods-tap4FoodUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0716070B1D3988990015FE67 /* OAuthConsumer */ = {
+			isa = PBXGroup;
+			children = (
+				0716070C1D3988990015FE67 /* Categories */,
+				071607131D3988990015FE67 /* Crypto */,
+				0716071A1D3988990015FE67 /* OAAttachment.h */,
+				0716071B1D3988990015FE67 /* OAAttachment.m */,
+				0716071C1D3988990015FE67 /* OACall.h */,
+				0716071D1D3988990015FE67 /* OACall.m */,
+				0716071E1D3988990015FE67 /* OAConsumer.h */,
+				0716071F1D3988990015FE67 /* OAConsumer.m */,
+				071607201D3988990015FE67 /* OADataFetcher.h */,
+				071607211D3988990015FE67 /* OADataFetcher.m */,
+				071607221D3988990015FE67 /* OAHMAC_SHA1SignatureProvider.h */,
+				071607231D3988990015FE67 /* OAHMAC_SHA1SignatureProvider.m */,
+				071607241D3988990015FE67 /* OAMutableURLRequest.h */,
+				071607251D3988990015FE67 /* OAMutableURLRequest.m */,
+				071607261D3988990015FE67 /* OAPlaintextSignatureProvider.h */,
+				071607271D3988990015FE67 /* OAPlaintextSignatureProvider.m */,
+				071607281D3988990015FE67 /* OAProblem.h */,
+				071607291D3988990015FE67 /* OAProblem.m */,
+				0716072A1D3988990015FE67 /* OARequestParameter.h */,
+				0716072B1D3988990015FE67 /* OARequestParameter.m */,
+				0716072C1D3988990015FE67 /* OAServiceTicket.h */,
+				0716072D1D3988990015FE67 /* OAServiceTicket.m */,
+				0716072E1D3988990015FE67 /* OASignatureProviding.h */,
+				0716072F1D3988990015FE67 /* OATestServer.rb */,
+				071607301D3988990015FE67 /* OAToken.h */,
+				071607311D3988990015FE67 /* OAToken.m */,
+				071607321D3988990015FE67 /* OATokenManager.h */,
+				071607331D3988990015FE67 /* OATokenManager.m */,
+				071607341D3988990015FE67 /* OAuthConsumer.h */,
+				071607351D3988990015FE67 /* README */,
+			);
+			path = OAuthConsumer;
+			sourceTree = "<group>";
+		};
+		0716070C1D3988990015FE67 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0716070D1D3988990015FE67 /* NSMutableURLRequest+Parameters.h */,
+				0716070E1D3988990015FE67 /* NSMutableURLRequest+Parameters.m */,
+				0716070F1D3988990015FE67 /* NSString+URLEncoding.h */,
+				071607101D3988990015FE67 /* NSString+URLEncoding.m */,
+				071607111D3988990015FE67 /* NSURL+Base.h */,
+				071607121D3988990015FE67 /* NSURL+Base.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		071607131D3988990015FE67 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				071607141D3988990015FE67 /* Base64Transcoder.c */,
+				071607151D3988990015FE67 /* Base64Transcoder.h */,
+				071607161D3988990015FE67 /* hmac.c */,
+				071607171D3988990015FE67 /* hmac.h */,
+				071607181D3988990015FE67 /* sha1.c */,
+				071607191D3988990015FE67 /* sha1.h */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
 		0776DB1B1D394D1500FC2CF1 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +240,8 @@
 				0776DB401D394D1500FC2CF1 /* tap4FoodTests */,
 				0776DB4B1D394D1500FC2CF1 /* tap4FoodUITests */,
 				0776DB251D394D1500FC2CF1 /* Products */,
+				C91D2E9D4EF06789693638D2 /* Pods */,
+				6164232DDA7FBE4B182F217F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,15 +258,17 @@
 		0776DB261D394D1500FC2CF1 /* tap4Food */ = {
 			isa = PBXGroup;
 			children = (
+				0716070B1D3988990015FE67 /* OAuthConsumer */,
 				0776DB2A1D394D1500FC2CF1 /* AppDelegate.h */,
 				0776DB2B1D394D1500FC2CF1 /* AppDelegate.m */,
 				0776DB301D394D1500FC2CF1 /* Main.storyboard */,
 				0776DB611D394F4900FC2CF1 /* SettingsViewController.h */,
 				0776DB621D394F4900FC2CF1 /* SettingsViewController.m */,
 				0776DB5E1D394ED900FC2CF1 /* ShowRestaurantsViewController.h */,
+				0776DB5F1D394ED900FC2CF1 /* ShowRestaurantsViewController.m */,
 				0776DB641D394FE000FC2CF1 /* TapScreenViewController.h */,
 				0776DB651D394FE000FC2CF1 /* TapScreenViewController.m */,
-				0776DB5F1D394ED900FC2CF1 /* ShowRestaurantsViewController.m */,
+				0776DB6A1D39611200FC2CF1 /* Model */,
 				0776DB331D394D1500FC2CF1 /* Assets.xcassets */,
 				0776DB5C1D394E7100FC2CF1 /* Images.xcassets */,
 				0776DB351D394D1500FC2CF1 /* LaunchScreen.storyboard */,
@@ -153,6 +304,41 @@
 			path = tap4FoodUITests;
 			sourceTree = "<group>";
 		};
+		0776DB6A1D39611200FC2CF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0776DB6B1D39650900FC2CF1 /* RestaurantCollection.h */,
+				0776DB6C1D39650900FC2CF1 /* RestaurantCollection.m */,
+				0776DB671D39610D00FC2CF1 /* Restaurant.h */,
+				0776DB681D39610D00FC2CF1 /* Restaurant.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6164232DDA7FBE4B182F217F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0716074A1D3989530015FE67 /* Security.framework */,
+				C8161B44C553E092D683E534 /* libPods-tap4Food.a */,
+				402E97E1B6555A89C66E3574 /* libPods-tap4FoodTests.a */,
+				8774FA4EDE741A31AE42825C /* libPods-tap4FoodUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C91D2E9D4EF06789693638D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				691740E2B019D110D62D12B9 /* Pods-tap4Food.debug.xcconfig */,
+				F4DDA4915023A918624A81EE /* Pods-tap4Food.release.xcconfig */,
+				1B82A8390662E7F3B37580B3 /* Pods-tap4FoodTests.debug.xcconfig */,
+				BCF4F3BEF43C660611EDD176 /* Pods-tap4FoodTests.release.xcconfig */,
+				8EC91B3220F6BEADC24E7976 /* Pods-tap4FoodUITests.debug.xcconfig */,
+				FA225D6D69E9527DDC06D6A3 /* Pods-tap4FoodUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +346,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0776DB511D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4Food" */;
 			buildPhases = (
+				5BEF5A97693F2BA687060BCE /* [CP] Check Pods Manifest.lock */,
 				0776DB201D394D1500FC2CF1 /* Sources */,
 				0776DB211D394D1500FC2CF1 /* Frameworks */,
 				0776DB221D394D1500FC2CF1 /* Resources */,
+				09EC607F0BE724A891FDBB98 /* [CP] Embed Pods Frameworks */,
+				92F6420368DFB5AF7B648BCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +366,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0776DB541D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodTests" */;
 			buildPhases = (
+				6D1821378BEBE52C4937C02D /* [CP] Check Pods Manifest.lock */,
 				0776DB391D394D1500FC2CF1 /* Sources */,
 				0776DB3A1D394D1500FC2CF1 /* Frameworks */,
 				0776DB3B1D394D1500FC2CF1 /* Resources */,
+				38F3D2CBED724F7572FD5DAB /* [CP] Embed Pods Frameworks */,
+				FAB285FD077ADB78CCD26814 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +387,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0776DB571D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodUITests" */;
 			buildPhases = (
+				83AA16928487F4935B8F22A0 /* [CP] Check Pods Manifest.lock */,
 				0776DB441D394D1500FC2CF1 /* Sources */,
 				0776DB451D394D1500FC2CF1 /* Frameworks */,
 				0776DB461D394D1500FC2CF1 /* Resources */,
+				8B0A2C3D7F354A56AB874E7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,9 +450,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071607491D3988990015FE67 /* README in Resources */,
 				0776DB371D394D1500FC2CF1 /* LaunchScreen.storyboard in Resources */,
 				0776DB5D1D394E7100FC2CF1 /* Images.xcassets in Resources */,
 				0776DB341D394D1500FC2CF1 /* Assets.xcassets in Resources */,
+				071607461D3988990015FE67 /* OATestServer.rb in Resources */,
 				0776DB321D394D1500FC2CF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,16 +475,159 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09EC607F0BE724A891FDBB98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tap4Food/Pods-tap4Food-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38F3D2CBED724F7572FD5DAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tap4FoodTests/Pods-tap4FoodTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BEF5A97693F2BA687060BCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D1821378BEBE52C4937C02D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		83AA16928487F4935B8F22A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B0A2C3D7F354A56AB874E7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tap4FoodUITests/Pods-tap4FoodUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92F6420368DFB5AF7B648BCB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tap4Food/Pods-tap4Food-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAB285FD077ADB78CCD26814 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tap4FoodTests/Pods-tap4FoodTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0776DB201D394D1500FC2CF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0716073B1D3988990015FE67 /* sha1.c in Sources */,
+				0716073A1D3988990015FE67 /* hmac.c in Sources */,
+				0716073F1D3988990015FE67 /* OADataFetcher.m in Sources */,
+				071607421D3988990015FE67 /* OAPlaintextSignatureProvider.m in Sources */,
+				071607371D3988990015FE67 /* NSString+URLEncoding.m in Sources */,
+				071607431D3988990015FE67 /* OAProblem.m in Sources */,
+				071607411D3988990015FE67 /* OAMutableURLRequest.m in Sources */,
+				071607451D3988990015FE67 /* OAServiceTicket.m in Sources */,
+				071607441D3988990015FE67 /* OARequestParameter.m in Sources */,
+				0716073E1D3988990015FE67 /* OAConsumer.m in Sources */,
 				0776DB661D394FE000FC2CF1 /* TapScreenViewController.m in Sources */,
 				0776DB2C1D394D1500FC2CF1 /* AppDelegate.m in Sources */,
+				071607361D3988990015FE67 /* NSMutableURLRequest+Parameters.m in Sources */,
+				0716073C1D3988990015FE67 /* OAAttachment.m in Sources */,
 				0776DB601D394ED900FC2CF1 /* ShowRestaurantsViewController.m in Sources */,
+				0716073D1D3988990015FE67 /* OACall.m in Sources */,
+				071607401D3988990015FE67 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
 				0776DB291D394D1500FC2CF1 /* main.m in Sources */,
+				071607391D3988990015FE67 /* Base64Transcoder.c in Sources */,
+				0776DB691D39610D00FC2CF1 /* Restaurant.m in Sources */,
 				0776DB631D394F4900FC2CF1 /* SettingsViewController.m in Sources */,
+				071607471D3988990015FE67 /* OAToken.m in Sources */,
+				0776DB6D1D39650900FC2CF1 /* RestaurantCollection.m in Sources */,
+				071607381D3988990015FE67 /* NSURL+Base.m in Sources */,
+				071607481D3988990015FE67 /* OATokenManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +768,7 @@
 		};
 		0776DB521D394D1500FC2CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 691740E2B019D110D62D12B9 /* Pods-tap4Food.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tap4Food/Info.plist;
@@ -440,6 +780,7 @@
 		};
 		0776DB531D394D1500FC2CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4DDA4915023A918624A81EE /* Pods-tap4Food.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tap4Food/Info.plist;
@@ -451,6 +792,7 @@
 		};
 		0776DB551D394D1500FC2CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B82A8390662E7F3B37580B3 /* Pods-tap4FoodTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = tap4FoodTests/Info.plist;
@@ -463,6 +805,7 @@
 		};
 		0776DB561D394D1500FC2CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCF4F3BEF43C660611EDD176 /* Pods-tap4FoodTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = tap4FoodTests/Info.plist;
@@ -475,6 +818,7 @@
 		};
 		0776DB581D394D1500FC2CF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EC91B3220F6BEADC24E7976 /* Pods-tap4FoodUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = tap4FoodUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -486,6 +830,7 @@
 		};
 		0776DB591D394D1500FC2CF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA225D6D69E9527DDC06D6A3 /* Pods-tap4FoodUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = tap4FoodUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -514,6 +859,7 @@
 				0776DB531D394D1500FC2CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0776DB541D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +868,7 @@
 				0776DB561D394D1500FC2CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0776DB571D394D1500FC2CF1 /* Build configuration list for PBXNativeTarget "tap4FoodUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +877,7 @@
 				0776DB591D394D1500FC2CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
