@@ -21,6 +21,5 @@
 
 @property (nonatomic, strong) UIImage *restaurantPicture;
 
--(void) setupRestaurantWith: (float)latitude and:(float)longitude;
 
 @end
