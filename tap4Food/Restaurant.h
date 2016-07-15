@@ -12,14 +12,16 @@
 @interface Restaurant : NSObject
 
 @property (nonatomic, strong) NSString *phoneNumber;
-@property (nonatomic, strong) NSString *restaurantsName;
+@property (nonatomic, strong) NSString *restaurantName;
 @property (nonatomic, strong) NSString *restaurantAddress;
 @property (nonatomic, strong) NSString *numberOfRatings;
-@property (nonatomic, strong) NSString *distanceFromLocation;
 @property (nonatomic, strong) NSString *restaurantDescription;
 @property (nonatomic, strong) NSString *restaurantURL;
+@property (nonatomic, strong) NSString *restaurantRatingImgUrl;
 
 @property (nonatomic, strong) UIImage *restaurantPicture;
+
+@property double distanceFromLocation;
 
 
 @end
