@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Restaurant.h"
 
 @interface RestaurantCollection : NSObject
 
 -(void) setupRestaurantsWith: (float)latitude and:(float)longitude;
+-(Restaurant *) pickRandomRestaurant;
 
-
+@property BOOL dataLoaded;
 @end
