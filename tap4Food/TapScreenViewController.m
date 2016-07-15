@@ -7,9 +7,10 @@
 //
 
 #import "TapScreenViewController.h"
+@import CoreLocation;
 
-@interface TapScreenViewController ()
-
+@interface TapScreenViewController () <CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *locationManager; 
 @end
 
 @implementation TapScreenViewController
@@ -17,12 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupLocationManager];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) setupLocationManager {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
+}
+
 
 /*
 #pragma mark - Navigation
