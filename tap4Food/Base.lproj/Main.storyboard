@@ -16,9 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-36-7Rm">
+                                <rect key="frame" x="152" y="319" width="70" height="30"/>
+                                <state key="normal" title="Tap4Food"/>
+                                <connections>
+                                    <segue destination="5vz-fO-eOb" kind="show" identifier="tap4FoodSegue" id="CF6-Ai-toe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZW3-j9-hg6"/>
+                    <navigationItem key="navigationItem" id="ZW3-j9-hg6">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Qom-zj-yVd">
+                            <connections>
+                                <segue destination="rh2-8D-wgX" kind="show" identifier="settingsSeque" id="v6h-j1-CJ4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -34,7 +49,7 @@
                         <viewControllerLayoutGuide type="bottom" id="74M-qZ-GJ8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PVw-2e-gqH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -52,7 +67,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JEl-SC-TM0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9C0-Uk-gOn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
