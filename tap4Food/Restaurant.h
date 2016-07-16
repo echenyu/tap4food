@@ -15,10 +15,10 @@
 @property (nonatomic, strong) NSString *restaurantName;
 @property (nonatomic, strong) NSString *restaurantAddress;
 @property (nonatomic, strong) NSString *restaurantDescription;
-@property (nonatomic, strong) NSString *restaurantURL;
-@property (nonatomic, strong) NSString *restaurantRatingImgUrl;
 
-@property (nonatomic, strong) UIImage *restaurantPicture;
+@property (nonatomic, strong) NSURL *restaurantURL;
+@property (nonatomic, strong) NSURL *restaurantRatingImgUrl;
+@property (nonatomic, strong) NSURL *restaurantPictureURL;
 
 @property double distanceFromLocation;
 @property int numberOfRatings;

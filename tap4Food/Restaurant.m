@@ -8,6 +8,7 @@
 
 #import "Restaurant.h"
 
+static float const METER_TO_MILE = 0.00086763;
 
 @interface Restaurant () {
     
@@ -17,14 +18,21 @@
 @implementation Restaurant
 
 -(void) setupRestaurantWith: (NSDictionary *)restaurantJSON {
+    //NSStrings to initialize
     self.phoneNumber = [restaurantJSON objectForKey:@"display_phone"];
     self.restaurantName = [restaurantJSON objectForKey:@"name"];
     self.restaurantAddress = [self createAddressForRestaurant:restaurantJSON];
-    self.numberOfRatings = (int)[restaurantJSON objectForKey:@"review_count"];
     self.restaurantDescription = [restaurantJSON objectForKey:@"snippet_text"];
-    self.restaurantURL = [restaurantJSON objectForKey:@"url"];
-    self.restaurantRatingImgUrl = [restaurantJSON objectForKey:@"rating_img_url"];
-    self.distanceFromLocation = [[restaurantJSON objectForKey:@"distance"]doubleValue];
+    
+    //URLs to initialize
+    self.restaurantURL = [self createUrlWith:restaurantJSON and: @"mobile_url"];
+    self.restaurantRatingImgUrl = [self createUrlWith:restaurantJSON and: @"rating_img_url"];
+    self.restaurantPictureURL = [self createUrlWith:restaurantJSON and:@"image_url"];
+    
+    //Doubles to initialize
+    self.distanceFromLocation = [[restaurantJSON objectForKey:@"distance"]doubleValue] * METER_TO_MILE;
+    self.numberOfRatings = (int)[restaurantJSON objectForKey:@"review_count"];
+
 }
 
 
@@ -43,6 +51,12 @@
     return addressString;
 }
 
+-(NSURL *)createUrlWith: (NSDictionary *)restaurantJSON and: (NSString *)key{
+    NSMutableString *urlString = [restaurantJSON objectForKey:key];
+    NSLog(@"%@", urlString);
+//    [urlString insertString:@"s" atIndex:4];
+    return [NSURL URLWithString:urlString];
+}
 @end
 
 
