@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A6518E0BBD071AF5B851F9877D7F9F93'
+               BlueprintIdentifier = '3988DE94A051194893266429608EBA3D'
                BlueprintName = 'Pods-tap4Food'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-tap4Food.a'>

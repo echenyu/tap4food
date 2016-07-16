@@ -7,72 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		042D506F68819029770610D6E5817EF3 /* TDOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 78292A4CD8377B368E0FE6A6143D9437 /* TDOAuth.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0994C06D160648B2B3F19F73F1812AB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		1CA5E5B427016F8F21C95D7088C3FA48 /* OMGHTTPURLRQ-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1990419A7FC3D8A50F9D1A7C0CC5C7E5 /* OMGHTTPURLRQ-dummy.m */; };
-		2FFBB779C148BAFC16CAFCDBF46DD004 /* Pods-tap4Food-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37220A2FF758189AEBD0EEB6727BE416 /* Pods-tap4Food-dummy.m */; };
-		341FCC130F2F2D99B56420399E473412 /* TDOAuth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5B09DF1A1955EBCE6528CD960265A /* TDOAuth-dummy.m */; };
 		3CBF8ACF9B7A5ABC78889573A2D237FA /* Pods-tap4FoodTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 121991B035211821C18BC7DCE9A759FA /* Pods-tap4FoodTests-dummy.m */; };
 		46020A3EC0EF8E55B142509109CB7E73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		48FD54B161094645748D2BACA8DE4A5B /* OMGUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E88838D0DDF2FE93721469CBE9F62C /* OMGUserAgent.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6046748B068EFEBE556C9D7520EB9477 /* TDOAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 66DC7D555D33B544339B05188B7730BD /* TDOAuth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69A6851977A877455D5206AF2F80672C /* Pods-tap4Food-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37220A2FF758189AEBD0EEB6727BE416 /* Pods-tap4Food-dummy.m */; };
+		6C136FB65BD948CEC8378A773E7010DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		84B5351C5F4317697D448B1A8371B92F /* Pods-tap4FoodUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E28A0AF22ECC1BF5BA4EE45C8F305EF8 /* Pods-tap4FoodUITests-dummy.m */; };
-		BA50FB4822085F1212AAC52700B050A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		BE4F07F45B54BDE0F95E45C01A142597 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		DAB036E91FE4F2DD1E45A0F1301AD114 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		F29C6CB87595941B74EE3F238D78B367 /* OMGUserAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 685A2BFAABB1660FCFF52F5DA22AA4ED /* OMGUserAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		04C3159053879B9AEB0DA9B937A84810 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCD660E6CD2216BA204430C04B61EFFF;
-			remoteInfo = OMGHTTPURLRQ;
-		};
-		6AD3CB3595CE7AC969D8B7E39E4C5CA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCD660E6CD2216BA204430C04B61EFFF;
-			remoteInfo = OMGHTTPURLRQ;
-		};
-		F6EE03E179AF6B70769C6AC2904DD94D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19B27ECE214B713D58074859E253788D;
-			remoteInfo = TDOAuth;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		013A4D163E2B32990C4D9D0C15502D12 /* Pods-tap4FoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tap4FoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		121991B035211821C18BC7DCE9A759FA /* Pods-tap4FoodTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tap4FoodTests-dummy.m"; sourceTree = "<group>"; };
-		1990419A7FC3D8A50F9D1A7C0CC5C7E5 /* OMGHTTPURLRQ-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OMGHTTPURLRQ-dummy.m"; sourceTree = "<group>"; };
+		1BC7F5C023DB8BEB05D4D9FA18CEA2C9 /* libPods-tap4FoodTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4FoodTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		213B1724C62BE8BC65F92A9BC1A24B5B /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		24A48A9675E021926794630B73EA143D /* libPods-tap4FoodUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4FoodUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37220A2FF758189AEBD0EEB6727BE416 /* Pods-tap4Food-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tap4Food-dummy.m"; sourceTree = "<group>"; };
-		376F214CB1726A898C1E511DAB51B11E /* libPods-tap4FoodTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4FoodTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3791517BB16F91C557E0322C5175EEA1 /* Pods-tap4FoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tap4FoodTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3CB5B09DF1A1955EBCE6528CD960265A /* TDOAuth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TDOAuth-dummy.m"; sourceTree = "<group>"; };
+		4CCFB41C75B2E061D3F42E0E91D4DF8F /* libPods-tap4Food.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4Food.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		514A865279F77286E73532A89C99F789 /* Pods-tap4FoodTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tap4FoodTests-resources.sh"; sourceTree = "<group>"; };
-		56E55BCD448CE36FC5B322CB670851F0 /* libPods-tap4Food.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4Food.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FEA2DB655A4C61036102C79FFBC5797 /* TDOAuth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TDOAuth.xcconfig; sourceTree = "<group>"; };
 		5FF35F60D736F78AA025CCB272D98213 /* Pods-tap4FoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tap4FoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		63405EEADB07B496AE58E9099FDF8833 /* Pods-tap4Food-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tap4Food-resources.sh"; sourceTree = "<group>"; };
-		66DC7D555D33B544339B05188B7730BD /* TDOAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TDOAuth.h; sourceTree = "<group>"; };
-		67E88838D0DDF2FE93721469CBE9F62C /* OMGUserAgent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OMGUserAgent.m; path = Sources/OMGUserAgent.m; sourceTree = "<group>"; };
-		685A2BFAABB1660FCFF52F5DA22AA4ED /* OMGUserAgent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OMGUserAgent.h; path = Sources/OMGUserAgent.h; sourceTree = "<group>"; };
 		74429C539A8716B3AD57A35D561C23E0 /* Pods-tap4Food.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tap4Food.debug.xcconfig"; sourceTree = "<group>"; };
-		7714E17700926E229D0B3ACB0B23B46E /* OMGHTTPURLRQ.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OMGHTTPURLRQ.xcconfig; sourceTree = "<group>"; };
-		78292A4CD8377B368E0FE6A6143D9437 /* TDOAuth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TDOAuth.m; sourceTree = "<group>"; };
 		799C713EAFC79D0589667B9601270832 /* Pods-tap4FoodTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tap4FoodTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7F02F2E6BC119C1B581FDC8C5895C5DB /* Pods-tap4FoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tap4FoodUITests.release.xcconfig"; sourceTree = "<group>"; };
-		81503E25E0A5385FE89E07B0DD161507 /* libOMGHTTPURLRQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOMGHTTPURLRQ.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A8C695D91AB75430CDA69C69675934 /* Pods-tap4Food-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tap4Food-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8B97830FF37DE15A8A18345D8E3D0587 /* libPods-tap4FoodUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tap4FoodUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9CBA3E7D997DFC44FF08492D281C8490 /* Pods-tap4Food.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tap4Food.release.xcconfig"; sourceTree = "<group>"; };
+		9E17161130B27DB46F01569D1C6C5443 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		A1F35F478410F7EF4E29D8EE0408F1CD /* Pods-tap4FoodUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tap4FoodUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		ABA70E763F32B34E6D2082BBCF74B12F /* Pods-tap4FoodUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tap4FoodUITests-frameworks.sh"; sourceTree = "<group>"; };
 		ADC166BF014E2D663D3E1F232FC37523 /* Pods-tap4FoodUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tap4FoodUITests-resources.sh"; sourceTree = "<group>"; };
@@ -81,35 +42,16 @@
 		BA7C5F4EC247745A97738A8DA3718A8D /* Pods-tap4FoodTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tap4FoodTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D2BADDD1D7DEB7799254AE025B7F6D62 /* Pods-tap4FoodUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tap4FoodUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E19A30784EA08E4F1417D5CB1DC6DD6B /* OMGHTTPURLRQ-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OMGHTTPURLRQ-prefix.pch"; sourceTree = "<group>"; };
 		E28A0AF22ECC1BF5BA4EE45C8F305EF8 /* Pods-tap4FoodUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tap4FoodUITests-dummy.m"; sourceTree = "<group>"; };
-		E7C9A5532B8F2F19F585AB5BB0A5E189 /* TDOAuth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TDOAuth-prefix.pch"; sourceTree = "<group>"; };
 		E9A8C2A4C6B71A3A7001DEE324B9C424 /* Pods-tap4FoodTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tap4FoodTests-frameworks.sh"; sourceTree = "<group>"; };
-		F684553115ACED5745D64A5273D7B684 /* libTDOAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTDOAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		06DF07A7F70611A3E1FD76D182EE36DE /* Frameworks */ = {
+		6DC700621FE2F17BC5C18218D38F96C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA50FB4822085F1212AAC52700B050A0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B1D567D66ABCF7E01CE83042332F49D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0994C06D160648B2B3F19F73F1812AB7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		69B2EEF9FFD746EC0A8387666BCA007D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BE4F07F45B54BDE0F95E45C01A142597 /* Foundation.framework in Frameworks */,
+				6C136FB65BD948CEC8378A773E7010DA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,17 +89,6 @@
 			path = "Target Support Files/Pods-tap4Food";
 			sourceTree = "<group>";
 		};
-		2E3A906538D7EE3E7FED833EE546299E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7714E17700926E229D0B3ACB0B23B46E /* OMGHTTPURLRQ.xcconfig */,
-				1990419A7FC3D8A50F9D1A7C0CC5C7E5 /* OMGHTTPURLRQ-dummy.m */,
-				E19A30784EA08E4F1417D5CB1DC6DD6B /* OMGHTTPURLRQ-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/OMGHTTPURLRQ";
-			sourceTree = "<group>";
-		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,25 +112,20 @@
 			path = "Target Support Files/Pods-tap4FoodUITests";
 			sourceTree = "<group>";
 		};
-		6F9F6ED24E7EBF6EBB08346D4101DDB4 /* TDOAuth */ = {
+		552C04C99B9EC7FD6897DEAA23CA97B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66DC7D555D33B544339B05188B7730BD /* TDOAuth.h */,
-				78292A4CD8377B368E0FE6A6143D9437 /* TDOAuth.m */,
-				7018DDD187188F414DC68FFF52349F69 /* Support Files */,
+				213B1724C62BE8BC65F92A9BC1A24B5B /* GoogleMaps.framework */,
 			);
-			path = TDOAuth;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7018DDD187188F414DC68FFF52349F69 /* Support Files */ = {
+		6B9DDBFD34805D0CECB3FE7AA6B7B594 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5FEA2DB655A4C61036102C79FFBC5797 /* TDOAuth.xcconfig */,
-				3CB5B09DF1A1955EBCE6528CD960265A /* TDOAuth-dummy.m */,
-				E7C9A5532B8F2F19F585AB5BB0A5E189 /* TDOAuth-prefix.pch */,
+				AAA2E410E8C08C05E23E73307973F577 /* GoogleMaps */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/TDOAuth";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		714FBB9D84D3DC8B94736CE8917717D3 /* Targets Support Files */ = {
@@ -212,23 +138,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		79DC324FC62BD5296B4EB21B2231821B /* Pods */ = {
+		73B8D5454E134C63E7B9912412A431A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2CDDB17F5CBAF96010565A7EA715BD9 /* OMGHTTPURLRQ */,
-				6F9F6ED24E7EBF6EBB08346D4101DDB4 /* TDOAuth */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7C92FF1859D6401888BE16D4CBCCB6E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				81503E25E0A5385FE89E07B0DD161507 /* libOMGHTTPURLRQ.a */,
-				56E55BCD448CE36FC5B322CB670851F0 /* libPods-tap4Food.a */,
-				376F214CB1726A898C1E511DAB51B11E /* libPods-tap4FoodTests.a */,
-				8B97830FF37DE15A8A18345D8E3D0587 /* libPods-tap4FoodUITests.a */,
-				F684553115ACED5745D64A5273D7B684 /* libTDOAuth.a */,
+				4CCFB41C75B2E061D3F42E0E91D4DF8F /* libPods-tap4Food.a */,
+				1BC7F5C023DB8BEB05D4D9FA18CEA2C9 /* libPods-tap4FoodTests.a */,
+				24A48A9675E021926794630B73EA143D /* libPods-tap4FoodUITests.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,8 +153,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				79DC324FC62BD5296B4EB21B2231821B /* Pods */,
-				7C92FF1859D6401888BE16D4CBCCB6E0 /* Products */,
+				6B9DDBFD34805D0CECB3FE7AA6B7B594 /* Pods */,
+				73B8D5454E134C63E7B9912412A431A0 /* Products */,
 				714FBB9D84D3DC8B94736CE8917717D3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -259,6 +174,23 @@
 			path = "Target Support Files/Pods-tap4FoodTests";
 			sourceTree = "<group>";
 		};
+		AAA2E410E8C08C05E23E73307973F577 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				552C04C99B9EC7FD6897DEAA23CA97B2 /* Frameworks */,
+				BA6CC55F7C3DC98EA32DB381E76D8A4B /* Resources */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		BA6CC55F7C3DC98EA32DB381E76D8A4B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E17161130B27DB46F01569D1C6C5443 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,64 +199,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E2CDDB17F5CBAF96010565A7EA715BD9 /* OMGHTTPURLRQ */ = {
-			isa = PBXGroup;
-			children = (
-				2E3A906538D7EE3E7FED833EE546299E /* Support Files */,
-				E4E4AB7D4EF105C01FC45035C64E5496 /* UserAgent */,
-			);
-			path = OMGHTTPURLRQ;
-			sourceTree = "<group>";
-		};
-		E4E4AB7D4EF105C01FC45035C64E5496 /* UserAgent */ = {
-			isa = PBXGroup;
-			children = (
-				685A2BFAABB1660FCFF52F5DA22AA4ED /* OMGUserAgent.h */,
-				67E88838D0DDF2FE93721469CBE9F62C /* OMGUserAgent.m */,
-			);
-			name = UserAgent;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		C46B1B2248038D58B7A9923C26B11B29 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F29C6CB87595941B74EE3F238D78B367 /* OMGUserAgent.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA2AAF5331A6E5430D9040059CAAB08F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6046748B068EFEBE556C9D7520EB9477 /* TDOAuth.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		19B27ECE214B713D58074859E253788D /* TDOAuth */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7BB94E9FE5378B68C3FCCDD4D6C81D66 /* Build configuration list for PBXNativeTarget "TDOAuth" */;
-			buildPhases = (
-				D80AC251A366B56BBCC14B2A67F36A6D /* Sources */,
-				4B1D567D66ABCF7E01CE83042332F49D /* Frameworks */,
-				FA2AAF5331A6E5430D9040059CAAB08F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E7C9D5197CB861FFFBF4FCBD9003489 /* PBXTargetDependency */,
-			);
-			name = TDOAuth;
-			productName = TDOAuth;
-			productReference = F684553115ACED5745D64A5273D7B684 /* libTDOAuth.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		342797C3B659506049D621F2218B7BBD /* Pods-tap4FoodUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B758CAEC74B15712A111620D10D9D4D8 /* Build configuration list for PBXNativeTarget "Pods-tap4FoodUITests" */;
@@ -338,7 +215,23 @@
 			);
 			name = "Pods-tap4FoodUITests";
 			productName = "Pods-tap4FoodUITests";
-			productReference = 8B97830FF37DE15A8A18345D8E3D0587 /* libPods-tap4FoodUITests.a */;
+			productReference = 24A48A9675E021926794630B73EA143D /* libPods-tap4FoodUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3988DE94A051194893266429608EBA3D /* Pods-tap4Food */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3637C8E4E4AB88B5636779F46D8439F0 /* Build configuration list for PBXNativeTarget "Pods-tap4Food" */;
+			buildPhases = (
+				EF1966F2473E53C846B432CD7613CC80 /* Sources */,
+				6DC700621FE2F17BC5C18218D38F96C5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-tap4Food";
+			productName = "Pods-tap4Food";
+			productReference = 4CCFB41C75B2E061D3F42E0E91D4DF8F /* libPods-tap4Food.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		9A9F94593ACF1F75D6157F238202DDA3 /* Pods-tap4FoodTests */ = {
@@ -354,42 +247,7 @@
 			);
 			name = "Pods-tap4FoodTests";
 			productName = "Pods-tap4FoodTests";
-			productReference = 376F214CB1726A898C1E511DAB51B11E /* libPods-tap4FoodTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A6518E0BBD071AF5B851F9877D7F9F93 /* Pods-tap4Food */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 48D629D8E602D4C49E391DEBB2FD22A2 /* Build configuration list for PBXNativeTarget "Pods-tap4Food" */;
-			buildPhases = (
-				33B9949255B046213DCCC120CB093225 /* Sources */,
-				69B2EEF9FFD746EC0A8387666BCA007D /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F40B203B81DBBD01C3FA3EE3BA1DDBF8 /* PBXTargetDependency */,
-				26352737185D1DDEC16F61CE5B66BA6B /* PBXTargetDependency */,
-			);
-			name = "Pods-tap4Food";
-			productName = "Pods-tap4Food";
-			productReference = 56E55BCD448CE36FC5B322CB670851F0 /* libPods-tap4Food.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		FCD660E6CD2216BA204430C04B61EFFF /* OMGHTTPURLRQ */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BCDAA84180B46191D5FDD1F3233A04FE /* Build configuration list for PBXNativeTarget "OMGHTTPURLRQ" */;
-			buildPhases = (
-				5AE69805046AB1822BAFEC93CBB54CA1 /* Sources */,
-				06DF07A7F70611A3E1FD76D182EE36DE /* Frameworks */,
-				C46B1B2248038D58B7A9923C26B11B29 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OMGHTTPURLRQ;
-			productName = OMGHTTPURLRQ;
-			productReference = 81503E25E0A5385FE89E07B0DD161507 /* libOMGHTTPURLRQ.a */;
+			productReference = 1BC7F5C023DB8BEB05D4D9FA18CEA2C9 /* libPods-tap4FoodTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -409,15 +267,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7C92FF1859D6401888BE16D4CBCCB6E0 /* Products */;
+			productRefGroup = 73B8D5454E134C63E7B9912412A431A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FCD660E6CD2216BA204430C04B61EFFF /* OMGHTTPURLRQ */,
-				A6518E0BBD071AF5B851F9877D7F9F93 /* Pods-tap4Food */,
+				3988DE94A051194893266429608EBA3D /* Pods-tap4Food */,
 				9A9F94593ACF1F75D6157F238202DDA3 /* Pods-tap4FoodTests */,
 				342797C3B659506049D621F2218B7BBD /* Pods-tap4FoodUITests */,
-				19B27ECE214B713D58074859E253788D /* TDOAuth */,
 			);
 		};
 /* End PBXProject section */
@@ -431,23 +287,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		33B9949255B046213DCCC120CB093225 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FFBB779C148BAFC16CAFCDBF46DD004 /* Pods-tap4Food-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5AE69805046AB1822BAFEC93CBB54CA1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1CA5E5B427016F8F21C95D7088C3FA48 /* OMGHTTPURLRQ-dummy.m in Sources */,
-				48FD54B161094645748D2BACA8DE4A5B /* OMGUserAgent.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A7AF8D098C5834055F157A6F95B04614 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,37 +295,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D80AC251A366B56BBCC14B2A67F36A6D /* Sources */ = {
+		EF1966F2473E53C846B432CD7613CC80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				341FCC130F2F2D99B56420399E473412 /* TDOAuth-dummy.m in Sources */,
-				042D506F68819029770610D6E5817EF3 /* TDOAuth.m in Sources */,
+				69A6851977A877455D5206AF2F80672C /* Pods-tap4Food-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		26352737185D1DDEC16F61CE5B66BA6B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TDOAuth;
-			target = 19B27ECE214B713D58074859E253788D /* TDOAuth */;
-			targetProxy = F6EE03E179AF6B70769C6AC2904DD94D /* PBXContainerItemProxy */;
-		};
-		5E7C9D5197CB861FFFBF4FCBD9003489 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OMGHTTPURLRQ;
-			target = FCD660E6CD2216BA204430C04B61EFFF /* OMGHTTPURLRQ */;
-			targetProxy = 04C3159053879B9AEB0DA9B937A84810 /* PBXContainerItemProxy */;
-		};
-		F40B203B81DBBD01C3FA3EE3BA1DDBF8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OMGHTTPURLRQ;
-			target = FCD660E6CD2216BA204430C04B61EFFF /* OMGHTTPURLRQ */;
-			targetProxy = 6AD3CB3595CE7AC969D8B7E39E4C5CA7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0895426DF2EBF181016331D7F668959B /* Debug */ = {
@@ -510,26 +327,26 @@
 			};
 			name = Debug;
 		};
-		33E5E16693644317187AE8969D282690 /* Release */ = {
+		1484BFC6E39F2CA962723E4EC94F5698 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FEA2DB655A4C61036102C79FFBC5797 /* TDOAuth.xcconfig */;
+			baseConfigurationReference = 74429C539A8716B3AD57A35D561C23E0 /* Pods-tap4Food.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TDOAuth/TDOAuth-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -611,27 +428,6 @@
 			};
 			name = Debug;
 		};
-		6255E6448BEAFEA7DA071FFCF1670989 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7714E17700926E229D0B3ACB0B23B46E /* OMGHTTPURLRQ.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OMGHTTPURLRQ/OMGHTTPURLRQ-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		66DFA6833FC317B16CC0696B37F27781 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F02F2E6BC119C1B581FDC8C5895C5DB /* Pods-tap4FoodUITests.release.xcconfig */;
@@ -653,17 +449,17 @@
 			};
 			name = Release;
 		};
-		8A9BC4D972456914746727E523E736C1 /* Debug */ = {
+		797EB76C08CCC1F268011F08FAC1D5E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74429C539A8716B3AD57A35D561C23E0 /* Pods-tap4Food.debug.xcconfig */;
+			baseConfigurationReference = 9CBA3E7D997DFC44FF08492D281C8490 /* Pods-tap4Food.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -672,7 +468,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		A41ECA7E5895D1D1A7C93627D8C7FF48 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -716,69 +512,6 @@
 			};
 			name = Debug;
 		};
-		C663CA23CD901AFD97EAE539A3677574 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7714E17700926E229D0B3ACB0B23B46E /* OMGHTTPURLRQ.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OMGHTTPURLRQ/OMGHTTPURLRQ-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		C7BCC38773AA1F60D6943EB7CB7A3881 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FEA2DB655A4C61036102C79FFBC5797 /* TDOAuth.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TDOAuth/TDOAuth-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		F467F40B39E43F1FFE8716990D384FF7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CBA3E7D997DFC44FF08492D281C8490 /* Pods-tap4Food.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -800,20 +533,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48D629D8E602D4C49E391DEBB2FD22A2 /* Build configuration list for PBXNativeTarget "Pods-tap4Food" */ = {
+		3637C8E4E4AB88B5636779F46D8439F0 /* Build configuration list for PBXNativeTarget "Pods-tap4Food" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8A9BC4D972456914746727E523E736C1 /* Debug */,
-				F467F40B39E43F1FFE8716990D384FF7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7BB94E9FE5378B68C3FCCDD4D6C81D66 /* Build configuration list for PBXNativeTarget "TDOAuth" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C7BCC38773AA1F60D6943EB7CB7A3881 /* Debug */,
-				33E5E16693644317187AE8969D282690 /* Release */,
+				1484BFC6E39F2CA962723E4EC94F5698 /* Debug */,
+				797EB76C08CCC1F268011F08FAC1D5E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -823,15 +547,6 @@
 			buildConfigurations = (
 				C656FA173C85E8F71EAC7577B8C1088C /* Debug */,
 				66DFA6833FC317B16CC0696B37F27781 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BCDAA84180B46191D5FDD1F3233A04FE /* Build configuration list for PBXNativeTarget "OMGHTTPURLRQ" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6255E6448BEAFEA7DA071FFCF1670989 /* Debug */,
-				C663CA23CD901AFD97EAE539A3677574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
