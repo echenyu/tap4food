@@ -14,7 +14,6 @@
 @property (nonatomic, strong) NSString *phoneNumber;
 @property (nonatomic, strong) NSString *restaurantName;
 @property (nonatomic, strong) NSString *restaurantAddress;
-@property (nonatomic, strong) NSString *numberOfRatings;
 @property (nonatomic, strong) NSString *restaurantDescription;
 @property (nonatomic, strong) NSString *restaurantURL;
 @property (nonatomic, strong) NSString *restaurantRatingImgUrl;
@@ -22,6 +21,9 @@
 @property (nonatomic, strong) UIImage *restaurantPicture;
 
 @property double distanceFromLocation;
+@property int numberOfRatings;
 
+//Public Methods
+-(void) setupRestaurantWith: (NSDictionary *)restaurantJSON; 
 
 @end

@@ -35,7 +35,7 @@ static NSString *const YELP_BASE_URL = @"https://api.yelp.com/v2/search?term=foo
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
         if(!error) {
             NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            NSArray *businesses = [jsonDictionary objectForKey:@"businesses"];            
+            NSArray *businesses = [jsonDictionary objectForKey:@"businesses"];
             jsonArrayFromYelp = businesses;
             [self setupRestaurantsArray];
             _dataLoaded = YES;
@@ -43,6 +43,7 @@ static NSString *const YELP_BASE_URL = @"https://api.yelp.com/v2/search?term=foo
             dispatch_async(dispatch_get_main_queue(), ^{
                //Segue back to the home page and alert user that there was error
             });
+            _dataLoaded = YES; 
         }
     }];
     [task resume];
@@ -83,34 +84,10 @@ static NSString *const YELP_BASE_URL = @"https://api.yelp.com/v2/search?term=foo
     for(int i = 0; i < [jsonArrayFromYelp count]; i++) {
         Restaurant *newRestaurant = [[Restaurant alloc]init];
         NSDictionary *currentRestaurant = [jsonArrayFromYelp objectAtIndex:i];
-        
-        newRestaurant.phoneNumber = [currentRestaurant objectForKey:@"display_phone"];
-        newRestaurant.restaurantName = [currentRestaurant objectForKey:@"name"];
-        newRestaurant.restaurantAddress = [self createAddressForRestaurant:currentRestaurant];
-        newRestaurant.numberOfRatings = [currentRestaurant objectForKey:@"review_count"];
-        newRestaurant.restaurantDescription = [currentRestaurant objectForKey:@"snippet_text"];
-        newRestaurant.restaurantURL = [currentRestaurant objectForKey:@"url"];
-        newRestaurant.restaurantRatingImgUrl = [currentRestaurant objectForKey:@"rating_img_url"];
-       
-        newRestaurant.distanceFromLocation = [[currentRestaurant objectForKey:@"distance"]doubleValue];
-
+        [newRestaurant setupRestaurantWith: currentRestaurant];
         [restaurantsArray addObject:newRestaurant];
     }
 }
 
--(NSString *) createAddressForRestaurant: (NSDictionary *) currentRestaurant{
-    NSDictionary *addressDictionary = [currentRestaurant objectForKey:@"location"];
-    NSArray *address = [addressDictionary objectForKey:@"display_address"];
-    NSString *addressString = [[NSString alloc]init];
-    
-    for (int i = 0; i < [address count]; i++) {
-        addressString = [addressString stringByAppendingString:[address objectAtIndex:i]];
-        if(i != [address count] - 1) {
-            addressString = [addressString stringByAppendingString:@", "];
-        }
-    }
-    
-    return addressString;
-}
 
 @end
